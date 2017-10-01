@@ -1,0 +1,7 @@
+/* BOX MODEL impostato a BORDER BOX */
+html {
+   box-sizing: border-box;
+}
+*, *:before, *:after {
+   box-sizing: inherit;
+}
