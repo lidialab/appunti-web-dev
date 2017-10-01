@@ -9,6 +9,6 @@ html {
 ```
 
 
-##Link di riferimento:
+**Link di riferimento:**
 
 Box Model [https://www.paulirish.com/2012/box-sizing-border-box-ftw/](https://www.paulirish.com/2012/box-sizing-border-box-ftw/)
