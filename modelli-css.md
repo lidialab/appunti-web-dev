@@ -7,3 +7,8 @@ html {
    box-sizing: inherit;
 }
 ```
+
+
+##Link di riferimento:
+
+Box Model [https://www.paulirish.com/2012/box-sizing-border-box-ftw/](https://www.paulirish.com/2012/box-sizing-border-box-ftw/)
