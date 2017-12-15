@@ -29,10 +29,8 @@ http://sottocartella.dev --> localhost/sottocartella
 
 valet secure sottocartella --> https://sottocartella.dev
 
-sudo apt-get install mariadb-client-10.1
-sudo apt-get install mariadb-server-10.1
-sudo apt-get install mariadb-server
-
+sudo apt-get install -y mariadb-client-10.1 mariadb-server-10.1 mariadb-server
+ 
 sudo mysql -uroot
 > use mysql;
 > update user set plugin='' where User='root';
