@@ -8,10 +8,9 @@ php -r "unlink('composer-setup.php');"
 
 
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo apt-get install -y build-essential
+sudo apt-get install -y nodejs build-essential
 
-
+sudo mv composer.phar /usr/local/bin/composer
 
 composer global require cpriego/valet-linux
 export PATH=$PATH:/home/lidia/.config/composer/vendor/bin/
