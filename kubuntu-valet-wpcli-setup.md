@@ -1,3 +1,5 @@
+Appunti tratti dalle super lezioni di [Alecaddd](https://www.youtube.com/watch?v=zu42YzJ8_OM&list=PLriKzYyLb28l4vbFOrb0wIr11Iguj4Ur1 "Pop!_OS Development Setup")
+
 ```
 sudo apt install -y php curl php7.1-curl
 
