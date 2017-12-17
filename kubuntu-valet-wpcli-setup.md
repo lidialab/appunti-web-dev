@@ -15,7 +15,7 @@ sudo apt-get install -y nodejs build-essential
 
 sudo mv composer.phar /usr/local/bin/composer
 ```
-##Valet - Installazione
+## Valet - Installazione
 ```
 composer global require cpriego/valet-linux
 export PATH=$PATH:/home/lidia/.config/composer/vendor/bin/
@@ -25,7 +25,7 @@ sudo /etc/init.d/apache2 stop
 sudo apt-get remove apache2
 valet install
 ```
-##Valet - Impostare cartella dei progetti
+## Valet - Impostare cartella dei progetti
 ```
 valet domain estensione
 mkdir sviluppo
@@ -38,7 +38,7 @@ valet secure sottocartella --> https://sottocartella.estensione
 
 NB: evitare estensione .dev
 ```
-##DATABASE
+## DATABASE
 ```
 sudo apt-get install -y mariadb-client-10.1 mariadb-server-10.1 mariadb-server
  
@@ -47,7 +47,7 @@ sudo mysql -uroot
 > update user set plugin='' where User='root';
 > flush privileges;
 ```
-##WP CLI - Installazione
+## WP CLI - Installazione
 ```
 curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 php wp-cli.phar --info
@@ -55,14 +55,14 @@ chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 
 ```
-##phpMyAdmin
+## phpMyAdmin
 ```
 scaricare e scompattare in una cartella progetto (Valet)
 phpMyAdmin
 config.inc.php
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 ```
-##WP CLI - Installare una nuova istanza di WordPress
+## WP CLI - Installare una nuova istanza di WordPress
 ```
 crea nuovo db wpkit
 mkdir wpkit
