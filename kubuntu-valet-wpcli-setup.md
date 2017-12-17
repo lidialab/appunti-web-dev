@@ -1,6 +1,6 @@
 Appunti tratti dalle super lezioni della serie [Pop!_OS Development Setup](https://www.youtube.com/watch?v=zu42YzJ8_OM&list=PLriKzYyLb28l4vbFOrb0wIr11Iguj4Ur1 "Pop!_OS Development Setup") di [Alecaddd](https://github.com/Alecaddd)
 
-CONFIGURAZIONE PROVATA su un'installazione fresh di una distro Debian based (ubuntu, kubuntu, pop! os, os elementary, ubuntu server; sempre sulla versione più recente):
+NB: configurazione provata su un'installazione fresh di una distro Debian based (ubuntu, kubuntu, pop! os, os elementary; sempre sulla versione più recente), attenzione alla versione php (adattare php7.1 alla versione scaricabile --> phpX.y):
 ```
 sudo apt install -y php curl php7.1-curl
 
