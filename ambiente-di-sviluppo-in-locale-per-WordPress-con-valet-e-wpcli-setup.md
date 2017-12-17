@@ -1,4 +1,4 @@
-# Preparare l'ambiente di sviluppo in locale
+# Preparare l'ambiente di sviluppo in locale per WordPress
 
 Appunti tratti dalle super lezioni della serie [Pop!_OS Development Setup](https://www.youtube.com/watch?v=zu42YzJ8_OM&list=PLriKzYyLb28l4vbFOrb0wIr11Iguj4Ur1 "Pop!_OS Development Setup") di [Alecaddd](https://github.com/Alecaddd)
 
