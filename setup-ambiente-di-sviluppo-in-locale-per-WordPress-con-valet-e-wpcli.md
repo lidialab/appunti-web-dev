@@ -74,3 +74,5 @@ wp core download --locale=it_IT
 aggiornare il file wp-config.php con i dati del db
 http://wpkit.estensione
 ```
+## PS
+Per raggiungere l'ambiente di sviluppo da un'altra postazione aggiungere le mappature dns nel file hosts del s.o. in uso.
