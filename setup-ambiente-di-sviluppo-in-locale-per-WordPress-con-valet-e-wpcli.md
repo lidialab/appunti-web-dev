@@ -3,6 +3,8 @@
 Appunti tratti dalle super lezioni della serie [Pop!_OS Development Setup](https://www.youtube.com/watch?v=zu42YzJ8_OM&list=PLriKzYyLb28l4vbFOrb0wIr11Iguj4Ur1 "Pop!_OS Development Setup") di [Alecaddd](https://github.com/Alecaddd)
 
 NB: configurazione provata su un'installazione fresh (fisica e virtuale) di una distro Debian based (ubuntu, kubuntu, pop! os, os elementary; sempre sulla versione più recente), attenzione alla versione php (adattare php7.1 alla versione scaricabile --> phpX.y):
+
+## PHP e COMPOSER - Installazione
 ```
 sudo apt-get install -y php curl php7.1-curl
 
@@ -37,10 +39,10 @@ mkdir sottocartella
 http://sottocartella.estensione --> localhost/sottocartella
 
 valet secure sottocartella --> https://sottocartella.estensione
-
-NB: evitare estensione .dev
 ```
-## DATABASE
+NB: evitare estensione .dev
+
+## DATABASE (MariaDB)
 ```
 sudo apt-get install -y mariadb-client-10.1 mariadb-server-10.1 mariadb-server
  
@@ -58,10 +60,9 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 
 ```
 ## phpMyAdmin
+scaricare e scompattare nella cartella phpmyadmin del park Valet così diventerà raggiungibile qui --> http://phpmyadmin.estensione
+se l'utente del database non ha password modificare nel file config.inc.php la linea:
 ```
-scaricare e scompattare in una cartella progetto (Valet)
-phpMyAdmin
-config.inc.php
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 ```
 ## WP CLI - Installare una nuova istanza di WordPress
@@ -70,6 +71,6 @@ crea nuovo db wpkit
 mkdir wpkit
 cd wpkit
 wp core download --locale=it_IT
-aggiorna file wp-config.php
+aggiornare il file wp-config.php con i dati del db
 http://wpkit.estensione
 ```
