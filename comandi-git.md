@@ -76,4 +76,5 @@ git branch
 
 
 ## Riferimenti
-http://rogerdudler.github.io/git-guide/index.it.html
+- http://rogerdudler.github.io/git-guide/index.it.html
+- https://services.github.com/on-demand/downloads/it/github-git-cheat-sheet/
