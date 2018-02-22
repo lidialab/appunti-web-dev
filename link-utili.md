@@ -8,3 +8,4 @@
 * https://help.github.com/
 * [15 minuti per imparare Git nel browser (simulazione)] https://try.github.io/levels/1/challenges/1
 * https://services.github.com/on-demand/
+* http://rogerdudler.github.io/git-guide/index.it.html
