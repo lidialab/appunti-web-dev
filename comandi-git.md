@@ -74,6 +74,10 @@ git branch
 ```
 
 
+Aggiungere e spiegare:
+```
+git log
+```
 
 ## Riferimenti
 - http://rogerdudler.github.io/git-guide/index.it.html
