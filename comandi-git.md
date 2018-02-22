@@ -72,3 +72,8 @@ Dalla cartella che ospita il repo
 ```
 git branch
 ```
+
+
+
+## Riferimenti
+http://rogerdudler.github.io/git-guide/index.it.html
