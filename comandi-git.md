@@ -73,6 +73,15 @@ Dalla cartella che ospita il repo
 git branch
 ```
 
+**Merge di branch**
+
+Dalla cartella che ospita il repo, con attivo il branch che RICEVE (di solito il master)
+*RACCOMANDAZIONE*: i due branch devono essere puliti (git status --> pulito)
+```
+git merge nomebranch
+```
+
+
 
 Aggiungere e spiegare:
 ```
