@@ -81,7 +81,21 @@ Dalla cartella che ospita il repo, con attivo il branch che RICEVE (di solito il
 git merge nomebranch
 ```
 
+**Visualizzare quali merge di branch sono stati fatti**
 
+Dalla cartella che ospita il repo master
+```
+git brach --merged
+git brach --nomerge
+```
+
+**Cancellare un branch**
+
+Dalla cartella che ospita il repo master
+
+```
+git branch -d nomebrach
+```
 
 Aggiungere e spiegare:
 ```
