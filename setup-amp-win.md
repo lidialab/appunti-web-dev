@@ -92,7 +92,7 @@ extension=php_openssl.dll
 
 Curl e Openssl permettono di fare gli aggiornamenti WordPress.
 
-Al bisogon aumentare i seguenti parametri:
+Al bisogno aumentare i seguenti parametri:
 
 ```
 max_execution_time = 180
