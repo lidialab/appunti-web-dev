@@ -30,9 +30,9 @@ Il servizio si potrà gestire sia da riga di comando
 
 start: ```net start apache2.4``` 
 
-stop: ```net start apache2.4```
+stop: ```net stop apache2.4```
 
-o da ```services.msc```
+che da ```services.msc```
 
 Si può rimuovere Apache come servizio Windows eseguendo ```httpd -k uninstall``` (dopo averlo stoppato)
 
@@ -58,3 +58,21 @@ PHPIniDir "C:/AMP/php7"
 
 PHPIniDir è la directory che contiene il file php.ini
 
+
+## MySQL
+
+Da https://www.mysql.com/downloads/ 
+
+(Download MySQL Community Server) https://dev.mysql.com/downloads/mysql/ 
+
+(Download MySQL Installer) https://dev.mysql.com/downloads/windows/installer/5.7.html
+
+(mysql-installer-community-5.7.21.0.msi) https://dev.mysql.com/downloads/file/?id=474803
+
+Il servizio si potrà gestire sia da riga di comando
+
+start: ```net start MySQL57``` 
+
+stop: ```net stop MySQL57```
+
+che da ```services.msc```
