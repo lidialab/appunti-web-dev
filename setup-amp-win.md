@@ -76,3 +76,5 @@ start: ```net start MySQL57```
 stop: ```net stop MySQL57```
 
 che da ```services.msc```
+
+Aggiungere la directory dell'eseguibili al **PATH** di Windows (es: C:\Program Files\MySQL\MySQL Server 5.7\bin)
