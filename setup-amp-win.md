@@ -69,6 +69,8 @@ Da https://www.mysql.com/downloads/
 
 (mysql-installer-community-5.7.21.0.msi) https://dev.mysql.com/downloads/file/?id=474803
 
+Installare anche MySQL Workbench CE, documentazione ed esempi.
+
 Il servizio si potrà gestire sia da riga di comando
 
 start: ```net start MySQL57``` 
@@ -84,5 +86,12 @@ Editare il file ```php.ini``` abilitando:
 extension_dir = "C:/AMP/php7/ext"
 extension=php_mysqli.dll
 extension=php_pdo_mysql.dll
+extension=php_curl.dll
+extension=php_openssl.dll
 ```
+
+Curl e Openssl permettono di fare gli aggiornamenti WordPress.
+
+## phpMyAdmin
+https://www.phpmyadmin.net/
 
