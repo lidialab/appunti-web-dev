@@ -78,3 +78,11 @@ stop: ```net stop MySQL57```
 che da ```services.msc```
 
 Aggiungere la directory dell'eseguibili al **PATH** di Windows (es: C:\Program Files\MySQL\MySQL Server 5.7\bin)
+
+Editare il file ```php.ini``` abilitando:
+```
+extension_dir = "C:/AMP/php7/ext"
+extension=php_mysqli.dll
+extension=php_pdo_mysql.dll
+```
+
