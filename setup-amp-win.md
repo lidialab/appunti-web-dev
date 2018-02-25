@@ -92,6 +92,16 @@ extension=php_openssl.dll
 
 Curl e Openssl permettono di fare gli aggiornamenti WordPress.
 
+Al bisogon aumentare i seguenti parametri:
+
+```
+max_execution_time = 180
+
+max_input_time = 120
+
+memory_limit = 256M
+```
+
 ## phpMyAdmin
 https://www.phpmyadmin.net/
 
