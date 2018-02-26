@@ -88,9 +88,12 @@ extension=php_mysqli.dll
 extension=php_pdo_mysql.dll
 extension=php_curl.dll
 extension=php_openssl.dll
+extension=php_gd2.dll
+extension=php_gettext.dll
 ```
 
 Curl e Openssl permettono di fare gli aggiornamenti WordPress.
+GD2 serve per creare immagini (esempio: Really simple Captcha).
 
 Al bisogno aumentare i seguenti parametri:
 
@@ -105,3 +108,6 @@ memory_limit = 256M
 ## phpMyAdmin
 https://www.phpmyadmin.net/
 
+# WordPress
+Per far funzionare i permalinks attivare il modulo *mod_rewrite.so* in ```httpd.conf```
+```LoadModule rewrite_module modules/mod_rewrite.so```
