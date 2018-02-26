@@ -110,4 +110,4 @@ https://www.phpmyadmin.net/
 
 # WordPress
 Per far funzionare i permalinks attivare il modulo *mod_rewrite.so* in ```httpd.conf```
-```LoadModule rewrite_module modules/mod_rewrite.so```
+```LoadModule rewrite_module modules/mod_rewrite.so``` e cambiare  “AllowOverride None” in “AllowOverride All” dove necessario.
