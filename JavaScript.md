@@ -131,8 +131,9 @@ window.prompt("Inserisci il tuo nome");  // input (Prompt)
 
 Fonti:
 
-Programmare con JavaScript dalle basi ad Ajax di Ivan Venuti - Edizioni FAG Milano - 2010
+- https://www.lynda.com/JavaScript-tutorials/JavaScript-Essential-Training by Morten Rand-Hendriksen on Lynda.com
+- Programmare con JavaScript dalle basi ad Ajax di Ivan Venuti - Edizioni FAG Milano - 2010
 
 varie:
 
-OnClick Academy JavaScript Fundamentals
+- OnClick Academy JavaScript Fundamentals
