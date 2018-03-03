@@ -136,4 +136,3 @@ Programmare con JavaScript dalle basi ad Ajax di Ivan Venuti - Edizioni FAG Mila
 varie:
 
 OnClick Academy JavaScript Fundamentals
-https://onclick-academy.teachable.com/courses/enrolled/121182
