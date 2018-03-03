@@ -130,7 +130,10 @@ window.prompt("Inserisci il tuo nome");  // input (Prompt)
 ```
 
 Fonti:
+
 Programmare con JavaScript dalle basi ad Ajax di Ivan Venuti - Edizioni FAG Milano - 2010
+
 varie:
+
 OnClick Academy JavaScript Fundamentals
 https://onclick-academy.teachable.com/courses/enrolled/121182
