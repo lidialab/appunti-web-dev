@@ -100,6 +100,8 @@ git branch -d nomebrach
 Aggiungere e spiegare:
 ```
 git log
+git remote add origin https://github.com/nome-utente/nome-repo.git
+git push -u origin master
 ```
 
 ## Riferimenti
