@@ -10,6 +10,7 @@ Linux, Mac, Win
 ## Pacchetti
 
 - Emmet
+- Sublime Style Column Selection
 - sass-autocompile (pre-requisiti node.js e node-sass globally, so it's possible to access it via CLI, command: npm install node-sass -g)
 - pigments
 - atom-beautify
