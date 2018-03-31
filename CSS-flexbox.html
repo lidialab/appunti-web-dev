@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<title>Flexbox</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style type="text/css">
+
+/*
+	si definisce un elemento contenitore con display:flex;
+	--> tutti gli elementi contenuti diventano flex items
+	si definisce la direzione dell'asse principale (main axis) in base all'orientamento del flusso dei item ' +  larghezza  + ' figli con flex-direction: row/coloumn;
+	l'altro asse viene detto cross axis
+	wrap, si definisce se gli elementi che non ci stanno possono andare a capo --> flex-wrap: wrap;
+	sintassi breve per flex-direction + flex-wrap -->	flex-flow: row wrap;
+	align-content: flex-start; --> cross-axis
+	justify-content: center; --> main-axis
+	align-items: flex-start; --> contenuto
+
+*/
+
+.flex-container {											display: flex;
+}
+
+.flex-direction-row  		  				{ 	flex-direction: row; 						}
+.flex-direction-col  	  					{ 	flex-direction: column; 				}
+.flex-direction-row-rev 					{ 	flex-direction: row-reverse; 		}
+.flex-direction-col-rev 					{ 	flex-direction: column-reverse; }
+
+.flex-wrap 												{ 	flex-wrap: wrap; 								}
+.flex-wrap-reverse 								{ 	flex-wrap: wrap-reverse; 				}
+
+.align-content-flex-start					{		align-content: flex-start; 			}
+.align-content-flex-end						{		align-content: flex-end; 				}
+.align-content-center							{		align-content: center; 					}
+.align-content-space-between			{		align-content: space-between; 	}
+.align-content-space-around				{		align-content: space-around; 		}
+.align-content-strecth						{		align-content: stretch; 				}
+
+.justify-content-flex-start				{		justify-content: flex-start; 		}
+.justify-content-flex-end					{		justify-content: flex-end; 			}
+.justify-content-center						{		justify-content: center; 				}
+.justify-content-space-between		{		justify-content: space-between; }
+.justify-content-space-around			{		justify-content: space-around; 	}
+
+.align-items-flex-start						{		align-items: flex-start; 				}
+.align-items-flex-end							{		align-items: flex-end; 					}
+.align-items-center								{		align-items: center; 						}
+.align-items-baseline							{		align-items: baseline; 					}
+.align-items-stretch							{		align-items: stretch; 					}
+
+/*
+	flex items
+	flex-grow
+		larghezza di crescita rispetto agli elementi siblings per riempire il contenitore padre con lo spazio rimanente
+	flex-shrink 1 x off
+		larghezza di de-crescita rispetto agli elementi siblings per riempire il contenitore padre con lo spazio rimanente
+	flex-basis  0 default
+			larghezza iniziale
+	shorthand flex--> grow shrink basis
+	es: flex: 1 1 150px;
+	align-self: flex-end; --> eccezione ad align-items
+
+*/
+
+.flex-item    {
+	color: #FFFFFF;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 1em;
+	border: 1px solid red;
+}
+
+.width-150 			{ width: 150px; }
+.min-width-150 	{ min-width: 150px; }
+.max-width-150 	{ max-width: 150px; }
+
+.width-250 			{ width: 250px; }
+.min-width-250 	{ min-width: 250px; }
+.max-width-250 	{ max-width: 250px; }
+
+.flex-item-flex-000								{		flex: 0 0 0;							}
+.flex-item-flex-100								{		flex: 1 0 0;							}
+.flex-item-flex-110								{		flex: 1 1 0;							}
+.flex-item-flex-111								{		flex: 1 1 1;							}
+
+.align-self-auto									{		align-self: auto; 				}
+.align-self-flex-start						{		align-self: flex-start; 	}
+.align-self-flex-end							{		align-self: flex-end; 		}
+.align-self-center								{		align-self: center; 			}
+.align-self-baseline							{		align-self: baseline; 		}
+.align-self-stretch								{		align-self: stretch; 			}
+
+
+.flex-container {
+	padding: 1em;
+	border: 3px solid blue;
+}
+
+.fi1 { background-color: #FF530D; }
+.fi2 { background-color: #7F2A06; }
+.fi3 { background-color: #FF8A59; }
+.fi4 { background-color: #7F452D; }
+.fi5 { background-color: #CC430A; }
+.fi6, .fi7, .fi8, .fi9, .fi10 {background-color: #000;}
+
+.general-box { margin-bottom: 15em;}
+.flex-casistica:nth-child(even){background-color: #e2e2e2;}
+.flex-casistica:nth-child(odd){background-color: #777777;}
+
+
+h1{
+	text-align: center;
+}
+h2.titolo-esempio-flex{
+	text-align: center;
+}
+
+</style>
+
+
+<script>
+
+var
+		proprietaFlexDirection,
+		proprietaAlignContent,
+		proprietaJustifyContent,
+		proprietaAlignItems,
+		proprietaWidth,
+		proprietaWidth1,
+		proprietaWrap = new Array();
+
+	proprietaFlexDirection = [
+		"flex-direction-row",
+		"flex-direction-row-rev",
+		"flex-direction-col",
+		"flex-direction-col-rev"
+	];
+
+	proprietaAlignContent = [
+		" ",
+		"align-content-flex-start",
+		"align-content-flex-end",
+		"align-content-center",
+		"align-content-space-between",
+		"align-content-space-around",
+		"align-content-stretch"
+	];
+
+	proprietaJustifyContent = [
+		" ",
+		"justify-content-flex-start",
+		"justify-content-flex-end",
+		"justify-content-center",
+		"justify-content-space-between",
+		"justify-content-space-around	"
+	];
+
+	proprietaAlignItems = [
+		" ",
+		"align-items-flex-start",
+		"align-items-flex-end",
+		"align-items-center",
+		"align-items-baseline",
+		"align-items-stretch"
+	];
+
+	proprietaWidth = [
+		"no-width",
+		"width-250",
+		"min-width-250",
+		"max-width-250"
+	];
+
+	proprietaWidth1 = [
+		"no-width",
+		"width-150",
+		"min-width-150",
+		"max-width-150"
+	];
+
+	proprietaWrap = [
+		" ",
+		"flex-wrap",
+		"flex-wrap-reverse"
+	];
+
+var proprietaContainer = "";
+var proprietaItem = "";
+
+</script>
+
+</head>
+
+
+<body>
+<h1>FlexBox</h1>
+
+<script>
+var qta_x = proprietaAlignContent.length;
+for ( var id_x = 0; id_x<qta_x; id_x++ ) {
+
+	var qtax = proprietaWrap.length;
+	for ( var idx = 0; idx<qtax; idx++ ) {
+
+		document.write('<div class="general-box">');
+
+		var qtay = proprietaWidth.length;
+		for ( var idy = 0; idy<qtay; idy++ ) {
+				document.write('<div class="flex-casistica">');
+					proprietaItem = proprietaWidth[idy];
+
+					var qtaz = proprietaFlexDirection.length;
+					for ( var idz = 0; idz<qtaz; idz++ ) {
+						proprietaContainer = proprietaFlexDirection[idz] + ' ' + proprietaWrap[idx] + ' ' + proprietaAlignContent[id_x];
+						document.write('<h2 class="titolo-esempio-flex">Container: ' + proprietaContainer + '<br>');
+						document.write('Items: ' + proprietaItem + '</h2>');
+						document.write('<div class="flex-container' + ' ' + proprietaContainer + '" >');
+						document.write('<div class="flex-item ' + proprietaItem + ' fi1">UNO<br><br>Lorem ipsum dolor sit amet</div><div class="flex-item ' + proprietaItem + ' fi2">DUE<br><br>Lorem ipsum dolor sit amet</div><div class="flex-item ' + proprietaItem + ' fi3">TRE<br><br>Lorem ipsum dolor sit amet</div><div class="flex-item ' + proprietaItem + ' fi4">QUATTRO<br><br>consectetur adipisicing elit. Quam in tenetur, cumque quidem sequi enim deserunt reprehenderit deleniti quas dolor velit, ullam eum eveniet non voluptatum officia nihil possimus neque.</div><div class="flex-item ' + proprietaItem + ' fi5">CINQUE<br><br>Lorem ipsum dolor sit amet</div><div class="flex-item ' + proprietaItem + ' fi6">SEI<br><br>Lorem ipsum dolor sit amet</div><div class="flex-item ' + proprietaItem + ' fi7">SETTE<br><br>Lorem ipsum dolor sit amet</div><div class="flex-item ' + proprietaItem + ' fi8">OTTO<br><br>Lorem ipsum dolor sit amet</div>');
+						document.write('</div>');
+				  }
+				document.write('</div>');
+			}
+			document.write('</div>');
+	}
+}
+</script>
+
+
+<script>
+var qta_x = proprietaAlignContent.length;
+for ( var id_x = 0; id_x<qta_x; id_x++ ) {
+
+	var qtax = proprietaWrap.length;
+	for ( var idx = 0; idx<qtax; idx++ ) {
+
+		document.write('<div class="general-box">');
+
+		var qtay = proprietaWidth1.length;
+		for ( var idy = 0; idy<qtay; idy++ ) {
+				document.write('<div class="flex-casistica">');
+					proprietaItem = proprietaWidth1[idy];
+
+					var qtaz = proprietaFlexDirection.length;
+					for ( var idz = 0; idz<qtaz; idz++ ) {
+						proprietaContainer = proprietaFlexDirection[idz] + ' ' + proprietaWrap[idx] + ' ' + proprietaAlignContent[id_x];
+						document.write('<h2 class="titolo-esempio-flex">Container: ' + proprietaContainer + '<br>');
+						document.write('Items: ' + proprietaItem + '</h2>');
+						document.write('<div class="flex-container' + ' ' + proprietaContainer + '" >');
+						document.write('<div class="flex-item ' + proprietaItem + ' fi1">UNO</div><div class="flex-item ' + proprietaItem + ' fi2">DUE</div><div class="flex-item ' + proprietaItem + ' fi3">TRE</div><div class="flex-item ' + proprietaItem + ' fi4">QUATTRO</div><div class="flex-item ' + proprietaItem + ' fi5">CINQUE</div><div class="flex-item ' + proprietaItem + ' fi6">SEI</div><div class="flex-item ' + proprietaItem + ' fi7">SETTE</div><div class="flex-item ' + proprietaItem + ' fi8">OTTO</div>');
+						document.write('</div>');
+				  }
+				document.write('</div>');
+			}
+			document.write('</div>');
+	}
+}
+</script>
+
+
+</body>
+</html>
