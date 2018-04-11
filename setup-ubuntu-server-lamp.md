@@ -4,11 +4,12 @@ sudo apt-get upgrade
 sudo apt-get install -y build-essential virtualbox-dkms nano zip unzip curl man-db acpid git module-assistant
 sudo reboot
 sudo mount /dev/cdrom /media/cdrom
+sudo m-a prepare
 sudo sh /media/cdrom/VBoxLinuxAdditions.run  --nox11
 sudo reboot
-sudo usermod -a -G vboxsf lidia
-logout (lidia)
-login  (lidia)
+sudo usermod -a -G vboxsf nomeutente
+logout (nomeutente)
+login  (nomeutente)
 sudo usermod -a -G vboxsf www-data
 preparare vboxsf.conf per /sites-available/
 sudoedit ports.conf per aggiungere Listen 8080
@@ -38,4 +39,15 @@ sudo apt-get install php-mcrypt php-intl php-sqlite3 php-mbstring php-xml php-gd
 sudo phpenmod mbstring simplexml
 
 /etc/apache2/apache2.conf
+```
+Per correggere problemi Virtual Box Linux Additions provare:
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install -y build-essential virtualbox-dkms nano zip unzip curl man-db acpid git module-assistant
+sudo reboot
+sudo mount /dev/cdrom /media/cdrom
+sudo m-a prepare
+sudo sh /media/cdrom/VBoxLinuxAdditions.run  --nox11
+sudo reboot
 ```
