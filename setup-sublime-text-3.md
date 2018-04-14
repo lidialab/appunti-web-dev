@@ -31,10 +31,11 @@ wordpress
 Preferenze > Settings :
   
   ```
-  {
+{
 	"auto_find_in_selection": true,
 	"auto_id_class": true,
 	"bold_folder_labels": true,
+	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-material-darker.tmTheme",
 	"fade_fold_buttons": false,
 	"font_size": 14,
 	"highlight_modified_tabs": true,
@@ -46,7 +47,9 @@ Preferenze > Settings :
 	"margin": 3,
 	"match_brackets_angle": true,
 	"show_encoding": true,
-	"tab_size": 3
+	"tab_size": 3,
+	"translate_tabs_to_spaces": true,
+	"theme": "Adaptive.sublime-theme"
 }
   ```
   
