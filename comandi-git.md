@@ -7,6 +7,7 @@ https://git-scm.com/downloads
 ```
 ### Comandi principali
 **Configurazione globale**
+
 Imposta nome ed email da mostrare nelle commit effettuate
 ```
 git config --global user.name "[name]"
@@ -113,15 +114,41 @@ git branch -d nomebrach
 ```
 
 **Clona un progetto esistente online e il suo storico git**
+
 ```
 $ git clone [url]
 ```
 
-**Pushing file to remote repos**
+**Push file to repo**
+
 ```
 git remote add origin https://github.com/nome-utente/nome-repo.git
 git push -u origin master
 $ fornire utente e password
+```
+
+**Pull file from repo** - DA DEFINIRE MEGLIO
+```
+git pull
+```
+
+**xxx**
+```
+```
+
+**xxx**
+```
+```
+**xxx**
+```
+```
+
+### .gitignore file
+Escludi file e percorsi 
+```
+*.log
+build/
+temp-*
 ```
 
 ## Riferimenti
