@@ -6,15 +6,24 @@ https://help.github.com/articles/set-up-git/#setting-up-git
 https://git-scm.com/downloads
 ```
 ### Comandi principali
+**Configurazione globale**
+Imposta nome ed email da mostrare nelle commit effettuate
+```
+git config --global user.name "[name]"
+git config --global user.email "[email]"
+```
+
 **Inizializzare un repo**
 
 Dalla cartella che ospita il repo
 ```
 git init
+oppure
+git init [project-name]
 ```
 **Controllare lo stato di un repo**
 
-Dalla cartella che ospita il repo
+Dalla cartella che ospita il repo, elenca i file nuovi o modificati
 ```
 git status
 ```
@@ -41,10 +50,16 @@ git commit -m "Descrizione della commit"
 
 **Confrontare in un repo**
 
-Dalla cartella che ospita il repo
+Dalla cartella che ospita il repo mostra le differenze non ancora staged
 ```
 git diff
 ```
+
+Mostra le differenze dall'ultima modifica staged
+```
+git diff --staged
+```
+
 
 **Creare un branch**
 
@@ -97,11 +112,16 @@ Dalla cartella che ospita il repo master
 git branch -d nomebrach
 ```
 
-Aggiungere e spiegare:
+**Clona un progetto esistente online e il suo storico git**
 ```
-git log
+$ git clone [url]
+```
+
+**Pushing file to remote repos**
+```
 git remote add origin https://github.com/nome-utente/nome-repo.git
 git push -u origin master
+$ fornire utente e password
 ```
 
 ## Riferimenti
