@@ -1,10 +1,10 @@
 # Git da linea di comando
-## Bash
-### Software
+## Software
 ```
 https://help.github.com/articles/set-up-git/#setting-up-git
 https://git-scm.com/downloads
 ```
+## Bash
 ### Comandi principali
 **Configurazione globale**
 
