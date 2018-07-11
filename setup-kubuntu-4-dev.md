@@ -97,7 +97,7 @@ $cfg['blowfish_secret'] = 'abcdefghil1234567890£$%&/(@#ù+12'; /* deve essere a
 
 ### Tema phpMyAdmin, migliorare la dimensione carattere per le istruzioni SQL
 duplicare la cartella del tema pmahomme in phpMyAdmin/themes
-nella nuova cartella editare il file info.inc.php e cambiare nome e versione del tema
+nella nuova cartella editare il file info.inc.php oppure theme.jso (dipende dalla versione) e cambiare nome e versione del tema
 nella sottocartella css editare il file codemirror.css.php e aggiungere alla fine del file
 le seguenti regole css sostituendo la dimensione del font con quella più adatta
 ```
@@ -105,9 +105,29 @@ le seguenti regole css sostituendo la dimensione del font con quella più adatta
    font-size: 20px;
 }
 ```
-
+Dalla home di phpMyAdmin cambiare il tema e verificare che tutto sia visualizzato correttamente
 
 ### Riferimenti
 https://www.phpmyadmin.net/
 https://docs.phpmyadmin.net/en/latest/
 
+## GIT
+
+## Konsole
+Creare un nuovo profilo dal menu Impostazioni di Konsole e poi impostarlo come profilo predefinito di Konsole
+Per personalizzare il prompt fare riferimento a 
+http://guide.debianizzati.org/index.php/Colorare_bash
+http://www.pluto.it/files/ildp/HOWTO/Bash-Prompt-HOWTO/Bash-Prompt-HOWTO-2.html
+e modificare la variabile PS1 nel file .bashrc della propria home
+
+## Atom.io
+
+## Sublime Text 3
+https://www.sublimetext.com/docs/3/linux_repositories.html
+```
+sudo wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update
+sudo apt-get install sublime-text
+```
