@@ -89,9 +89,24 @@ scarica phpMyAdmin e scompatta nella cartella di valet
 rinomina in phpMyAdmin così diventerà --> http://phpMyAdmin.vmlab
 rinominare config.sample.inc.php in config.inc.php e impostare i parametri desiderati
 
+config.inc.php
 ```
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
+$cfg['blowfish_secret'] = 'abcdefghil1234567890£$%&/(@#ù+12'; /* deve essere alemno 32 chars */
 ```
+
+### Tema phpMyAdmin, migliorare la dimensione carattere per le istruzioni SQL
+duplicare la cartella del tema pmahomme in phpMyAdmin/themes
+nella nuova cartella editare il file info.inc.php e cambiare nome e versione del tema
+nella sottocartella css editare il file codemirror.css.php e aggiungere alla fine del file
+le seguenti regole css sostituendo la dimensione del font con quella più adatta
+```
+.CodeMirror pre, .CodeMirror textarea {
+   font-size: 20px;
+}
+```
+
+
 ### Riferimenti
 https://www.phpmyadmin.net/
 https://docs.phpmyadmin.net/en/latest/
