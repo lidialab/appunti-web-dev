@@ -30,6 +30,11 @@ sudo apt-get install -y build-essential
 sudo apt-get install -y network-manager libnss3-tools jq xsel -y
 sudo apt-get install -y php7.2-cli php7.2-curl php7.2-mbstring  php7.2-xml php7.2-zip php7.2-sqlite3 php7.2-mysql php7.2-pgsql -y
 ```
+### Riferimenti
+Composer: https://getcomposer.org/
+
+### Note
+okkio alla versione php 7.2 --> X.x
 
 ## Valet
 
@@ -47,6 +52,13 @@ mkdir sviluppo
 cd sviluppo/
 valet park
 ```
+### Sottodomini:
+mkdir sottocartella
+extensione/sottocartella --> http://sottocartella.extensione
+http://sottocartella.extensione --> extensione/sottocartella
+
+#### https:
+valet secure sottocartella --> https://sottocartella.dev
 
 ## MariaDB
 
@@ -80,10 +92,7 @@ rinominare config.sample.inc.php in config.inc.php e impostare i parametri desid
 ```
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 ```
+### Riferimenti
+https://www.phpmyadmin.net/
+https://docs.phpmyadmin.net/en/latest/
 
-## Note
-okkio alla versione php 7.2 --> X.x
-mkdir sottocartella
-http://sottocartella.dev --> localhost/sottocartella
-
-valet secure sottocartella --> https://sottocartella.dev
