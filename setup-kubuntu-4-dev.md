@@ -1,4 +1,4 @@
-# Setup macchina virtuale Kubuntu per sviluppatori
+# Setup macchina virtuale Kubuntu per sviluppatori (VirtualBox Windows)
 
 post installazione iso kubuntu
 
