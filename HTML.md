@@ -4,8 +4,7 @@
 
 <head>
     <title></title>
-    <meta charset="utf-8">
-    <!-- lasciare entro i primi 1024 byte -->
+    <meta charset="utf-8">  <!-- lasciare entro i primi 1024 byte -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../lib/cssLLreset/LLreset.css">
     <style>
