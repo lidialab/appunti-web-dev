@@ -98,5 +98,57 @@ sudo npm install -g grunt-cli
 ```
 sudo gem install sass
 ```
+## SASS compiling task (per la directory del progetto)
+```
+npm install grunt-contribut-sass --save-dev
+npm install grunt-contribut-watch --save-dev
+```
+## Esempio di file Gruntfile.js per compilazione Sass 
+```
+module.exports = function(grunt) {
+   grunt.initConfig({
+      pkg: grunt.file.readJSON('package.json'),
+
+      sass:{
+         dev: {
+            options: {
+               style: 'expanded',
+               sourcemap: 'none',
+            },
+            files: {
+               'stileLL.css': 'scss/stileLL.scss'
+            }
+         }
+      },
+
+      watch: {
+         css: {
+            files: '**/*.scss',
+            tasks: ['sass']
+         }
+      },
+   });
+
+   grunt.loadNpmTasks('grunt-contrib-sass');
+   grunt.loadNpmTasks('grunt-contrib-watch');
+   grunt.registerTask('default',['watch']);
+}
+```
+## Esempio di file package.json per compilazione Sass 
+```
+{
+  "name": "sitostatico",
+  "version": "1.0.0",
+  "description": "Progetto base per studio css",
+  "main": "index.html",
+  "author": "LidiaLAB",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
+```
 ## PS
 Per raggiungere l'ambiente di sviluppo da un'altra postazione aggiungere le mappature dns nel file hosts del s.o. in uso.
