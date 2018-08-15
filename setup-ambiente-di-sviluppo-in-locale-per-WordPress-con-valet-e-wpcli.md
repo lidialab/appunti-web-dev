@@ -74,5 +74,29 @@ wp core download --locale=it_IT
 aggiornare il file wp-config.php con i dati del db
 http://wpkit.estensione
 ```
+## NPM (versione LTS raccomandata)
+```
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install -y build-essential
+```
+## NPM (versione 10...)
+```
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo apt-get install -y build-essential
+```
+## RUBY
+```
+sudo apt-get install -y ruby ruby-dev
+```
+## GRUNT CLI (globally)
+```
+sudo npm install -g grunt-cli
+```
+## SASS compiler (ruby)
+```
+sudo gem install sass
+```
 ## PS
 Per raggiungere l'ambiente di sviluppo da un'altra postazione aggiungere le mappature dns nel file hosts del s.o. in uso.
