@@ -100,8 +100,8 @@ sudo gem install sass
 ```
 ## SASS compiling task (per la directory del progetto)
 ```
-npm install grunt-contribut-sass --save-dev
-npm install grunt-contribut-watch --save-dev
+sudo npm install grunt-contribut-sass --save-dev
+sudo npm install grunt-contribut-watch --save-dev
 ```
 ## Esempio di file Gruntfile.js per compilazione Sass 
 ```
