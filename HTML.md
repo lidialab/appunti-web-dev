@@ -3,9 +3,10 @@
 <html lang="it">
 
 <head>
-    <title></title>
+    <title>Titolo della pagina</title>
     <meta charset="utf-8">  <!-- lasciare entro i primi 1024 byte -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="http://nomedominio.ext/percorso/">
     <link rel="stylesheet" href="../../lib/cssLLreset/LLreset.css">
     <style>
         .elemento-tag {
@@ -16,7 +17,7 @@
     </style>
 
 </head>
-
+<!-- revisionato fino a qua -->
 <body>
     <p>Questo è un <span class="elemento-tag">paragrafo</span> tag in <span class="elemento-tag">body</span>.</p>
 
