@@ -11,14 +11,19 @@ Linux, Mac, Win
 
 - Package Control
 - Emmet
-- Sublime Code Intel
 - Sidebar Enhancements
 - Advanced New File
+- HTTP Requester
+---------------------------
+- Sublime Code Intel
 - Git Gutter
 - DocBlockr
 - SublimeLint
 - PHP CS
 - JSLint
+- Linter
+- Prefixr
+- Live Reload + estensione browser
 
 wordpress 
 
