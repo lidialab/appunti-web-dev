@@ -10,6 +10,7 @@ Quando un file php è costituito da solo codice php si può omettere il tag di c
 È utile per prevenire linee vuote o a capo non voluti, dopo il tag di chiusura.
 
 ## Variabili
+Case sensitive
 ```php
 $nomeVariabile = 'hello';
 ```
@@ -42,3 +43,14 @@ if() {
     ...
     }
 ```
+
+## Input
+```php
+$_SERVER
+$_POST
+```
+
+
+
+
+
