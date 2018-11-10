@@ -1,6 +1,9 @@
 # PHP
 ## Tag di apertura e chiusura
-```<?php php>
+```php
+<?php 
+...
+?>
 ```
 Quando un file php è costituito da solo codice php si può omettere il tag di chiusura alla fine del file.
 
