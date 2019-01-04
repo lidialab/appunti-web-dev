@@ -79,6 +79,7 @@ Windows: %APPDATA%\Sublime Text 3
 
 ### Emmet
 **Personalizzazione snippet HTML (!)**
+
 Preferences > Package Settings > Emmet > Settings User
 ```
 {
