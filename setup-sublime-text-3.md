@@ -76,3 +76,18 @@ Linux: ~/.config/sublime-text-3
 OS X: ~/Library/Application Support/Sublime Text 3
 
 Windows: %APPDATA%\Sublime Text 3
+
+### Emmet
+**Personalizzazione snippet HTML (!)**
+Preferences > Package Settings > Emmet > Settings User
+```
+{
+   "snippets": {
+      "html": {
+         "snippets": {
+            "!": "<!DOCTYPE html>\n<html lang=\"it\">\n\n<head>\n\t<title>Titolo della pagina</title>\n\n\t<meta charset=\"utf-8\">  <!-- lasciare entro i primi 1024 byte -->\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n\n\t<base href=\"http://nomedominio.ext/percorso/\">\n\n\t<link rel=\"stylesheet\" href=\"../../lib/cssLLreset/LLreset.css\">\n\t<link rel=\"stylesheet\" href=\"stile.css\">\n\n</head>\n\n<body>\n\n</body>\n\n</html>"
+         }
+      }
+   }
+}
+```
