@@ -63,6 +63,16 @@ Preferenze > Settings :
 **Reindentare**:
 edit > line > reindent
 
+**Scorciatoie da tastiera**
+
+```
+[
+{ "keys": ["control+keypad_divide"],"command": "toggle_comment", "args": {"block": false} },
+{ "keys": ["shift+control+keypad_divide"],"command": "toggle_comment", "args": {"block": true}},
+{ "keys": ["alt+keypad_multiply"], "command": "insert_snippet", "args": {"name": "Packages/User/lidialab-parentesi.sublime-snippet"} }
+]
+```
+
 **Scorciatoie** da memorizzare:
 
 ctrl+m va alla parentesi che chiude
@@ -92,3 +102,7 @@ Preferences > Package Settings > Emmet > Settings User
    }
 }
 ```
+
+**Cartella snippet in Windows**
+
+```C:\Users\nomeutente\AppData\Roaming\Sublime Text 3\Packages\User
