@@ -25,8 +25,11 @@ Appunti JS
     </script>
 
     <!-- script richiamati da file esterno nel head -->        
-    <script type="text/javascript" src="fileEsterno.js"></script>
-    <!-- type="text/javascript" non è più necessario ??? -->
+    <!-- come valore predefinito type rimanda a uno script JavaScript-MIME viene quindi consigliato di ometterlo
+         https://www.w3.org/TR/html/semantics-scripting.html#the-script-element "Authors should omit the attribute, instead of redundantly giving a JavaScript MIME type."
+    -->
+    <script src="fileEsterno.js"></script>
+    
 
     <!-- 
         File JavaScript Esterno nell'head
