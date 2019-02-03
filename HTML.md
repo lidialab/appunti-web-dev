@@ -11,11 +11,23 @@ La dichiarazione DOCTYPE per HTML5 è la seguente:
 Il tag *html* di apertura del documento HTML dovrebbe essere accompagnato dall'attributo *lang*, molto utile per gli screen readers e per i traduttori.
 ```html
 <html lang="it">
-
+```
+```html
 <head>
-    <title>Titolo della pagina</title>
+```
+Il tag *meta* permette di dare molte informazioni utili al browser, come:
+- che tipo di codifica dei caratteri bisogna utilizzare per il rendering della pagina (per la gran parte delle lingue occidentali è l'*utf-8*), il tag meta del charset deve essere lasciato entro i primi 1024 byte del file
+- viewport
+- una breve descrizione del contenuto della pagina, sarà utilizzata dai motori di ricerca e da qualsiasi altro strumento che la prenda in considerazione
+```html
     <meta charset="utf-8">  <!-- lasciare entro i primi 1024 byte -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Descrizione della pagina">
+```
+```html    
+    <title>Titolo della pagina</title>
+```
+```html 
     <base href="http://nomedominio.ext/percorso/">
     <link rel="stylesheet" href="../../lib/cssLLreset/LLreset.css">
     <style>
