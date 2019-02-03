@@ -1,5 +1,15 @@
+La dichiarazione DOCTYPE informa il client del tipo di documento che sta per leggere, il browser *dovrebbe* quindi interpretarlo in base alla dichiarazione fatta, il più delle volte si vuole che il browser utilizzi lo standard ufficiale e non delle interpretazioni proprietarie, altre volte si potrebbe volere indicare uno specifico tipo di documento come per l'XHTML.
+
+DOCTYPE può essere scritto sia maiuscolo che minuscolo.
+
+Riferimento ufficiale: https://www.w3.org/QA/2002/04/valid-dtd-list.html
+
+La dichiarazione DOCTYPE per HTML5 è la seguente:
 ```html
 <!DOCTYPE html>
+```
+
+```html
 <html lang="it">
 
 <head>
