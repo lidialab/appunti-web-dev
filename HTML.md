@@ -38,6 +38,7 @@
             ipsum dolor sit amet, consectetur adipisicing elit. Distinctio aliquid at modi fugiat non eligendi consequatur
             cupiditate pariatur, voluptas placeat? Aperiam consequatur vel odit expedita dolor commodi quae facilis qui!<br><span>Questo è un elemento <span class="elemento-tag">span</span>.</span>
         </p>
+        <p lang="us">This is a paragraph with lang attribute set to us, this helps screen readers to correctly pronounce the text.</p>
         <hr>
         <section>
             <ol>
