@@ -29,7 +29,9 @@ Il tag *title* contiene il titolo della pagina che sarà utilizzato come titolo 
 ```html    
     <title>Titolo della pagina</title>
 ```
+
 ```html 
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <base href="http://nomedominio.ext/percorso/">
     <link rel="stylesheet" href="../../lib/cssLLreset/LLreset.css">
     <style>
@@ -48,6 +50,16 @@ Il tag *body* contiene il documento vero e proprio.
     <p>Content models <br>
         HTML4: block, inline<br>
         HTML5:flow, metadata, embedded, interactive, heading, phrasing, sectioning.
+    </p>
+    <p>
+        Struttura della pagina e nuovi tag HTML5<br>
+        HEADER
+        NAV
+        MAIN
+        SECTION
+        ARTICLE
+        ASIDE
+        FOOTER
     </p>
 ```
 I tag *P* servono per racchiudere paragrafi di testo. Il tag di chiusura può essere tralsciato, MA NON è una buona abitudine, per scrivere un buon codice è meglio chiudere sempre i tag che hanno il tag di chiusura!
@@ -68,14 +80,19 @@ HTML5 ha reintrodotto i tag *I* e *B*, servono per dare enfasi e importanza visi
 <p><em>This<em> è un termine inglese!</em></p>
 <p><b>Questo</b> è da mettere in evidenza.</p>
 ```
-
+Il tag *HEADER* dovrebbe essere utilizzato per indicare la parte introduttiva del contenuto padre.
 ```html 
     <header class="testatapg">
         <p>Questo è un <span class="elemento-tag">paragrafo</span> tag in <span class="elemento-tag">header</span>.</p>
         <div class="logopg"></div>
+```
+Il tag *NAV* dovrebbe essere utilizzato per indicare la navigazione **principale** della pagina.
+```html 
         <nav class="menupg"></nav>
     </header>
-
+```
+Il tag *MAIN* dovrebbe essere utilizzato per indicare il contenuto principale della pagina. Deve essere univoco per pagina.
+```html 
     <main class="corpopg" role="main">
 ```
 I tag *Hx* servono per i titoli delle varie sezioni del documento, creano una struttura gerarchica, dal principale H1 al più specifico H6.
@@ -91,7 +108,13 @@ I tag *Hx* servono per i titoli delle varie sezioni del documento, creano una st
         </p>
         <p lang="us">This is a paragraph with lang attribute set to us, this helps screen readers to correctly pronounce the text.</p>
         <hr>
+```
+Il tag *SECTION* dovrebbe essere utilizzato per indicare un generico raggruppamento di contenuti legati tra loro, ad esempio un titolo e il suo paragrafo.
+```html 
         <section>
+```
+I tag *UL* e *OL* servono per creare liste di elementi identificati dal tag *LI*.
+```html
             <ol>
                 <li>lista ol 1</li>
                 <li>lista ol 2</li>
@@ -107,6 +130,19 @@ I tag *Hx* servono per i titoli delle varie sezioni del documento, creano una st
                 <li>lista ul 4</li>
                 <li>lista ul 5</li>
             </ul>
+```
+Le liste possono essere nidificate all'interno di altre liste.
+```html
+            <ul>
+                <li>lista ul 1</li>
+                <li>lista ul 2</li>
+                <li>lista ul 3
+                <ul>
+                    <li>lista ul a</li>
+                    <li>lista ul b</li>
+                </ul>
+                </li>
+            </ul>
         </section>
         <hr>
         <section><address>Questo è un elemento <span class="elemento-tag">address</span></address> in section.</section>
@@ -114,6 +150,9 @@ I tag *Hx* servono per i titoli delle varie sezioni del documento, creano una st
         <section>
             <p>Questo è un paragrafo in <span class="elemento-tag">section</span> tag.</p>
             <hr>
+```
+Il tag *ARTICLE* dovrebbe essere utilizzato per indicare contenuto autosufficiente.
+```html 
             <article>
                 <p>Questo è un paragrafo in <span class="elemento-tag">article</span> tag.</p>
             </article>
@@ -140,6 +179,9 @@ cupiditate pariatur, voluptas placeat? Aperiam consequatur vel odit expedita dol
         </section>
         <hr>
         <section>
+```
+Il tag *DL* serve per creare definizioni di termini identificati dal tag *DT* e descriti nel testo racchiuso dal tag *DD*.
+```html
             <dl>
                 <dt>Questo è un <span class="elemento-tag">dt</span> tag.<dfn>Questo è un <span class="elemento-tag">dfn</span> tag.</dfn></dt>
                 <dd>... Questo è un <span class="elemento-tag">dd</span> tag. vocabolo o locuzione ...</dd>
@@ -147,8 +189,8 @@ cupiditate pariatur, voluptas placeat? Aperiam consequatur vel odit expedita dol
         </section>
         <hr>
         <section>
- ```
- Il tag *img* serve per inserire immagini nel contenuto, gli attributi widht e height sono importanti per il rendering della pagina e l'attributo alt per fornire informazioni extra ad esempio agli screen reader.
+```
+Il tag *img* serve per inserire immagini nel contenuto, gli attributi widht e height sono importanti per il rendering della pagina e l'attributo alt per fornire informazioni extra ad esempio agli screen reader.
  ```html
             <figure>
                 <img src="autore.jpeg" alt="Autoritratto dell'autore del testo.">
@@ -158,6 +200,9 @@ cupiditate pariatur, voluptas placeat? Aperiam consequatur vel odit expedita dol
         </section>
         <hr>
         <section>
+```
+Il tag *div* può essere utilizzato per raggruppare degli elementi e targettizzarli quando non ci sono altri elementi che  possono essere utilizzati (perché non avrebbe senso).
+ ```html
             <div>
                 Questo è un <span class="elemento-tag">div</span> tag.
             </div>
@@ -170,8 +215,12 @@ Il tag *A* serve per creare collegamenti
 - ancore interne o esterne
 - a indirizzi email, email
 - a numeri di telefono
-- si possono aprire anche in nuove finestre o in una specifica finestra
-- a documenti con opzione solo download e nome dell'allegato specificato
+Possiede diversi attributi opzionali interessanti ed utili:
+- target: si possono aprire anche in nuove finestre o in una specifica finestra
+- download: il documento sarà caricato anziché visualizzato; download="nome-per-il-file": per dare un nome all'allegato scaricato
+- title:
+- rel:
+- ... da rivedere
 
 ```html
             <a href="#">Questo è un <span class="elemento-tag">a</span> tag.</a>
@@ -248,9 +297,15 @@ Il tag *A* serve per creare collegamenti
         </section>
     </main>
     <hr>
+```
+Il tag *ASIDE* dovrebbe essere utilizzato per indicare un generico contenuti correlato al contenuto principale.
+```html 
     <aside>Questo è un paragrafo in <span class="elemento-tag">aside</span> tag.
     </aside>
     <hr>
+```
+Il tag *FOOTER* dovrebbe essere utilizzato per indicare la parte informativa posizionata in fondo al contenuto padre.
+```html 
     <footer class="piepg">Questo è un paragrafo in <span class="elemento-tag">footer</span> tag.</footer>
 
 </body>
