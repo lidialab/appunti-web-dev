@@ -18,7 +18,7 @@ Il tag *head* serve per contenere una serie di informazioni sul documento stesso
 ```
 Il tag *meta* permette di dare molte informazioni utili al browser, come:
 - che tipo di codifica dei caratteri bisogna utilizzare per il rendering della pagina (per la gran parte delle lingue occidentali è l'*utf-8*), il tag meta del charset deve essere lasciato entro i primi 1024 byte del file
-- viewport
+- viewport:
 - una breve descrizione del contenuto della pagina, sarà utilizzata dai motori di ricerca (al 99% utilizzato nei risultati di ricerca) e da qualsiasi altro strumento che la prenda in considerazione
 ```html
     <meta charset="utf-8">  <!-- lasciare entro i primi 1024 byte -->
@@ -190,7 +190,9 @@ Il tag *DL* serve per creare definizioni di termini identificati dal tag *DT* e 
         <hr>
         <section>
 ```
+Il tag *figure* 
 Il tag *img* serve per inserire immagini nel contenuto, gli attributi widht e height sono importanti per il rendering della pagina e l'attributo alt per fornire informazioni extra ad esempio agli screen reader.
+Il tag *ficaption* 
  ```html
             <figure>
                 <img src="autore.jpeg" alt="Autoritratto dell'autore del testo.">
