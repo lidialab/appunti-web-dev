@@ -54,7 +54,16 @@ I tag *P* servono per racchiudere paragrafi di testo. Il tag di chiusura può es
 ```html 
     <p>Questo è un <span class="elemento-tag">paragrafo</span> tag in <span class="elemento-tag">body</span>.</p>
 ```
-I tag *...* servono per
+I tag *BR* servono per andare forzatamente a capo, ad esempio per dividere in due una frase slogan. NON devono essere usati per creare spazio tra le righe o tra elementi.
+```html 
+    <p>Questo è un paragrafo<br> con tag BR <br> per andare a capo.</p>
+```
+I tag *EM* e *STRONG* servono per dare enfasi logica a una o più parole.
+```html 
+<p><em>Questo</em> è un paragrafo ;) </p>
+<p><strong>Questo</strong> è un paragrafo!</p>
+```
+
 ```html 
     <header class="testatapg">
         <p>Questo è un <span class="elemento-tag">paragrafo</span> tag in <span class="elemento-tag">header</span>.</p>
