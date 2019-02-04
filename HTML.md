@@ -12,18 +12,20 @@ Il tag *html* di apertura del documento HTML dovrebbe essere accompagnato dall'a
 ```html
 <html lang="it">
 ```
+Il tag *head* serve per contenere una serie di informazioni sul documento stesso e per richiamare risorse esterne come i fogli di stile e gli script.
 ```html
 <head>
 ```
 Il tag *meta* permette di dare molte informazioni utili al browser, come:
 - che tipo di codifica dei caratteri bisogna utilizzare per il rendering della pagina (per la gran parte delle lingue occidentali è l'*utf-8*), il tag meta del charset deve essere lasciato entro i primi 1024 byte del file
 - viewport
-- una breve descrizione del contenuto della pagina, sarà utilizzata dai motori di ricerca e da qualsiasi altro strumento che la prenda in considerazione
+- una breve descrizione del contenuto della pagina, sarà utilizzata dai motori di ricerca (al 99% utilizzato nei risultati di ricerca) e da qualsiasi altro strumento che la prenda in considerazione
 ```html
     <meta charset="utf-8">  <!-- lasciare entro i primi 1024 byte -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Descrizione della pagina">
 ```
+Il tag *title* contiene il titolo della pagina che sarà utilizzato come titolo della finestra/scheda nel browser, come titolo del bookmark quando il link è salvato tra i preferiti del browser, sarà letto dai motori di ricerca e al 99% utilizzato come titolo della pagina nei risultati di ricerca e da qualsiasi altro strumento che lo prenda in considerazione.
 ```html    
     <title>Titolo della pagina</title>
 ```
@@ -39,10 +41,21 @@ Il tag *meta* permette di dare molte informazioni utili al browser, come:
     </style>
 
 </head>
-<!-- revisionato fino a qua -->
+```
+Il tag *body* contiene il documento vero e proprio.
+```html   
 <body>
+    <p>Content models <br>
+        HTML4: block, inline<br>
+        HTML5:flow, metadata, embedded, interactive, heading, phrasing, sectioning.
+    </p>
+```
+I tag *P* servono per racchiudere paragrafi di testo. Il tag di chiusura può essere tralsciato, MA NON è una buona abitudine, per scrivere un buon codice è meglio chiudere sempre i tag che hanno il tag di chiusura!
+```html 
     <p>Questo è un <span class="elemento-tag">paragrafo</span> tag in <span class="elemento-tag">body</span>.</p>
-
+```
+I tag *...* servono per
+```html 
     <header class="testatapg">
         <p>Questo è un <span class="elemento-tag">paragrafo</span> tag in <span class="elemento-tag">header</span>.</p>
         <div class="logopg"></div>
@@ -50,13 +63,15 @@ Il tag *meta* permette di dare molte informazioni utili al browser, come:
     </header>
 
     <main class="corpopg" role="main">
+```
+I tag *Hx* servono per i titoli delle varie sezioni del documento, creano una struttura gerarchica, dal principale H1 al più specifico H6.
+```html         
         <h1>Titolo H1</h1>
         <h2>Titolo H2</h2>
         <h3>Titolo H3</h3>
         <h4>Titolo H4</h4>
         <h5>Titolo H5</h5>
-        <h6>Titolo H6</h6>
-        <p>Questo è un <span class="elemento-tag">paragrafo</span> tag in <span class="elemento-tag">main</span>.<br> Lorem
+        <h6>Titolo H6</h6>        <p>Questo è un <span class="elemento-tag">paragrafo</span> tag in <span class="elemento-tag">main</span>.<br> Lorem
             ipsum dolor sit amet, consectetur adipisicing elit. Distinctio aliquid at modi fugiat non eligendi consequatur
             cupiditate pariatur, voluptas placeat? Aperiam consequatur vel odit expedita dolor commodi quae facilis qui!<br><span>Questo è un elemento <span class="elemento-tag">span</span>.</span>
         </p>
