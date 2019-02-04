@@ -58,10 +58,15 @@ I tag *BR* servono per andare forzatamente a capo, ad esempio per dividere in du
 ```html 
     <p>Questo è un paragrafo<br> con tag BR <br> per andare a capo.</p>
 ```
-I tag *EM* e *STRONG* servono per dare enfasi logica a una o più parole.
+I tag *EM* e *STRONG* servono per dare rispettivamente enfasi e importanza logica a una o più parole.
 ```html 
-<p><em>Questo</em> è un paragrafo ;) </p>
-<p><strong>Questo</strong> è un paragrafo!</p>
+<p><em>Questo è fantastico ;) !</em></p>
+<p><strong>Questo è davvero importante</strong>!</p>
+```
+HTML5 ha reintrodotto i tag *I* e *B*, servono per dare enfasi e importanza visiva a una o più parole.
+```html 
+<p><em>This<em> è un termine inglese!</em></p>
+<p><b>Questo</b> è da mettere in evidenza.</p>
 ```
 
 ```html 
@@ -142,6 +147,9 @@ cupiditate pariatur, voluptas placeat? Aperiam consequatur vel odit expedita dol
         </section>
         <hr>
         <section>
+ ```
+ Il tag *img* serve per inserire immagini nel contenuto, gli attributi widht e height sono importanti per il rendering della pagina e l'attributo alt per fornire informazioni extra ad esempio agli screen reader.
+ ```html
             <figure>
                 <img src="autore.jpeg" alt="Autoritratto dell'autore del testo.">
                 <figcaption>Questo è un <span class="elemento-tag">figcaption</span> tag in un <span class="elemento-tag">figure</span>                    tag.
@@ -156,6 +164,16 @@ cupiditate pariatur, voluptas placeat? Aperiam consequatur vel odit expedita dol
         </section>
         <hr>
         <section>
+```
+Il tag *A* serve per creare collegamenti
+- assoluti o relativi
+- ancore interne o esterne
+- a indirizzi email, email
+- a numeri di telefono
+- si possono aprire anche in nuove finestre o in una specifica finestra
+- a documenti con opzione solo download e nome dell'allegato specificato
+
+```html
             <a href="#">Questo è un <span class="elemento-tag">a</span> tag.</a>
         </section>
         <hr>
@@ -211,6 +229,12 @@ cupiditate pariatur, voluptas placeat? Aperiam consequatur vel odit expedita dol
 
 
             </table>
+        </section>
+        <hr>
+        <section>
+            <h2>Caratteri speciali>
+                <p>HTML entities...</p>
+                <p>&nbsp;</p>
         </section>
         <hr>
         <section>Form
