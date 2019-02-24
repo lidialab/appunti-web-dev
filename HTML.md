@@ -18,7 +18,7 @@ Il tag *head* serve per contenere una serie di informazioni sul documento stesso
 ```
 Il tag *meta* permette di dare molte informazioni utili al browser, come:
 - che tipo di codifica dei caratteri bisogna utilizzare per il rendering della pagina (per la gran parte delle lingue occidentali è l'*utf-8*), il tag meta del charset deve essere lasciato entro i primi 1024 byte del file
-- viewport:
+- viewport: indica come il browser deve scalare e quale dimensione utilizzare; *width=device-width*: la larghezza della pagina sarà la stessa del viewport; *initial-scale=1*: la visualizzazione inizierà con lo zoom a 0.
 - una breve descrizione del contenuto della pagina, sarà utilizzata dai motori di ricerca (al 99% utilizzato nei risultati di ricerca) e da qualsiasi altro strumento che la prenda in considerazione
 ```html
     <meta charset="utf-8">  <!-- lasciare entro i primi 1024 byte -->
