@@ -1,5 +1,10 @@
 Appunti JS
 
+JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mantenuto e aggiornato dall'Ecma International (European Computer Manufacturers Association). Attualmente la versione più utilizzata da chi sviluppa e supportata dai browser è ECMAScript 5 del 2009 (la versione [5.1](https://www.ecma-international.org/ecma-262/5.1/) è un allineamento agli standard ISO).
+
+[Tabella di compatibilità mantenuta da Kangax](http://kangax.github.io/compat-table/es5/)
+
+
 ```html
 <!DOCTYPE html>
 <html lang="it">
@@ -551,9 +556,7 @@ Appunti JS
 
 Fonti:
 
-- https://www.lynda.com/JavaScript-tutorials/JavaScript-Essential-Training by Morten Rand-Hendriksen on Lynda.com
+- JavaScript Essential Training by Morten Rand-Hendriksen on Lynda.com
+- Learning JavaScript Language by Joe Chellman on Lynda.com
+- JavaScript Fundamentals - on OnClick Academy
 - Programmare con JavaScript dalle basi ad Ajax di Ivan Venuti - Edizioni FAG Milano - 2010
-
-varie:
-
-- OnClick Academy JavaScript Fundamentals
