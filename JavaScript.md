@@ -560,3 +560,11 @@ Fonti:
 - Learning JavaScript Language by Joe Chellman on Lynda.com
 - JavaScript Fundamentals - on OnClick Academy
 - Programmare con JavaScript dalle basi ad Ajax di Ivan Venuti - Edizioni FAG Milano - 2010
+
+Risorse free online:
+- https://eloquentjavascript.net/
+- http://exploringjs.com/
+- https://github.com/getify/You-Dont-Know-JS
+- https://developer.mozilla.org/it/docs/Web/JavaScript
+- https://www.quirksmode.org/js/contents.html
+- https://caniuse.com/#search=JavaScript
