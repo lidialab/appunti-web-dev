@@ -1,8 +1,38 @@
-Appunti JS
+# Appunti JS
 
 JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mantenuto e aggiornato dall'Ecma International (European Computer Manufacturers Association). Attualmente la versione più utilizzata da chi sviluppa e supportata dai browser è ECMAScript 5 del 2009 (la versione [5.1](https://www.ecma-international.org/ecma-262/5.1/) è un allineamento agli standard ISO).
 
 [Tabella di compatibilità mantenuta da Kangax](http://kangax.github.io/compat-table/es5/)
+
+JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i nomi di:
+- COSTANTI tutto in MAIUSCOLO
+- variabiliInizianoConMinuscola
+- Oggetti e Classi iniziano con la Maiuscola
+
+```javascript
+// commenti in JavaScript su una sola riga
+/* 
+   commenti in JavaScript 
+   su più 
+   righe
+*/    
+```
+
+```javascript
+
+```
+
+```javascript
+
+```
+
+```javascript
+
+```
+
+```javascript
+
+```
 
 
 ```html
@@ -13,24 +43,14 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
     <meta charset="utf-8">    <!-- lasciare entro i primi 1024 byte -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>JavaScript Skeleton</title>
-    <!-- 
-        JavaScript è case SENSItive
-            è comune utilizzare la scrittura camelCase per i nomi di:
-                COSTANTI tutto in MAIUSCOLO
-                variabiliInizianoConMinuscola
-                Oggetti e Classi iniziano con la Maiuscola
-    -->
-    
+
+    <!-- script richiamati nell'head del doc html -->  
     <script type="text/javascript">
-        // commenti in JavaScript su una sola riga
-        /* 
-           commenti in JavaScript 
-           su più righe 
-        */        
+        var x = 3.16;
     </script>
 
     <!-- script richiamati da file esterno nel head -->        
-    <!-- come valore predefinito type rimanda a uno script JavaScript-MIME viene quindi consigliato di ometterlo
+    <!-- come valore predefinito, type rimanda a uno script JavaScript-MIME, viene quindi consigliato di ometterlo
          https://www.w3.org/TR/html/semantics-scripting.html#the-script-element "Authors should omit the attribute, instead of redundantly giving a JavaScript MIME type."
     -->
     <script src="fileEsterno.js"></script>
@@ -52,15 +72,19 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
 
     <script type="text/javascript">
     // dichiarazione variabili
-        var x = 3.16;
-        var y = 'a';
-        var z = 'bc';
-        var nomeVariabile;
-        var a, b, c;
-    // assegnazione variabili ; se non è stata dichiarata prima JavaScript la crea (!!!...)
+        var x = 3.16;       //
+        var y = 'a';        //
+        var nomeVariabile;  // dichiarazione
+        var a, b, c;        // dichiarazione di più variabili
+    
+    // i nomi di variabile possono iniziare per: lettera, _, $
+    
+    // assegnazione variabili ; se non è stata dichiarata prima, JavaScript la crea (!!!...)
         nomeVariabile = 'qualcosa';
     // dichiarazione e assegnazione in unica riga
         var nomeVariabile2 = 'qualcosa';
+    // dichiarazione multipla e assegnazione in unica riga
+        var nomeVariabile = 'qualcosa'; var nomeVariabile2 = 'qualcosa2';
 
     // ATTENZIONE: se una variabile non viene dichiarata la prima volta che viene usata JS assume che è una nuova variabile e se la dichiara da solo...
 
@@ -69,17 +93,33 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
     // numeri
     var intero = 1;
     var decimale = 1.678;
-    // stringhe
+    Infinity
+    NaN         // not a number
+        
+    // Oggetto Math
+        
+    // stringhe (Oggetti)
     // carattere di escape -->  \
     var stringa1 = "stringa";
     var stringa2 = 'stringa';
+        
+    // Proprietà
+    var stringa.lunghezza = stringa1.length;
+    // Metodi
+    stringa1.toUpperCase();
+        
     // boolean
     var vero = true;
     var falso = false;
+    var buttonHasBeenClicked = false;
+    buttonHasBeenClicked = true;
+        
     // null
     var variabileNull = null;
+        
     // undefined
     var variabileUndefined;
+        
     // symbol
     
     // typeof per sapere di che tipo è la variabile
@@ -95,9 +135,22 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
         nomeArray2 = ["a","b","c"];
 
         var copiaSecondoValoreDellArray = nomeArray[1];
+        var giorniDellaSettimana = ['lun','mar','mer','gio','ven','sab','dom'];
 
+        var arrayDiOggetti = [
+            { 'nome' : "valore" }
+        ];
+
+        giorniDellaSettimana[0] = "lunedì";
+        
+        // Aggiungere elementi ad un array
+        var lista = ["valore1"];
+        lista[1] = "valore2";
+        lista[lista.length] = "valore3";
+        lista.push("valore4");
+        
         Proprietà 
-        var nElementiArray = nomeArray2.lenght;
+        var nElementiArray = nomeArray2.length;
 
         Metodi --> nomeArray.metodo()
         reverse
@@ -137,7 +190,7 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
     Operatori di comparazione
     == != < > <= >=
     === strict equal to         --> anche il tipo corrisponde
-    !== not strict equal to     
+    !== not strict equal to, strict inequality     
     
     Operatori logici
     &&
@@ -300,6 +353,8 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
         nomeOggetto.nomeproprietà1 = "a";
         nomeOggetto.nomeproprietà2 = "b";
         nomeOggetto.nomeproprietà3 = "c";
+        
+        var oggettoVuoto = {}
 
         var nomeOggetto = {
             nomeproprietà1 : "a",
@@ -308,6 +363,13 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
             nomeFunzione : function() { istruzioni }
         }
 
+        var nomeOggetto2 = {
+            'nomeproprietà1' : "a",
+            'nomeproprietà2' : "b",
+            'nomeproprietà3' : "c",
+            nomeFunzione : function() { istruzioni }
+        }
+        
         Costruttori
         function NomeCostruttore(a,b,c) {
             this.a = a;
@@ -327,10 +389,17 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
         DOT notation
         nomeOggetto.nomeProprietà
 
+        
+        ELIMINARE una proprietà
+        delete nomeOggetto.nomeProprietà;
+
         BRACKET notation --> quando la proprietà deve essere convertita è l'unica notation che funziona
         nomeOggetto["nomeProprietà"]
+        oppure se devo usare nel nome degli spazi (???perché dovrei???)
+        nomeOggetto["nome proprietà"]
 
-
+        REFERENCE di oggetti (nuovo puntamento alla stessa area di memoria)
+        var aliasOggetto = oggettoOriginale;
     */
 
     // DOM - Document Object Model, descrive le relazioni tra elementi html, è l'API per CSS e JS per modificare html
@@ -554,6 +623,10 @@ JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mante
 </html>
 ```
 
+Extra:
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords
+
 Fonti:
 
 - JavaScript Essential Training by Morten Rand-Hendriksen on Lynda.com
@@ -562,6 +635,7 @@ Fonti:
 - Programmare con JavaScript dalle basi ad Ajax di Ivan Venuti - Edizioni FAG Milano - 2010
 
 Risorse free online:
+
 - https://eloquentjavascript.net/
 - http://exploringjs.com/
 - https://github.com/getify/You-Dont-Know-JS
