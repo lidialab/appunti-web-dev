@@ -172,7 +172,9 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
     =
 
     Operatori aritmetici
-    + - / * ()
+    + - / * () %
+    % è il modulo (resto)
+    se + è usato con le stringhe esegue una concatenazione di stringhe
     
     Operatori di assegnamento aritmetici
     =
@@ -197,11 +199,12 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
     ||
     !
     nb, not con parentesi:
-    !()
+    !( ... )
 
     XOR (vero il primo o vero il secondo, ma non entrambi) --> if ( ( a == b ) || ( c == d ) ) && ( ( a == b ) != ( c == d ) ) {}
 
-
+    In una condizione in cui ci sono AND e OR gli AND vengono valutati per primi (per questo è consigliato l'uso delle parentesi anche quando sono superflue)
+    
     Operatore di concatenamento / concatenazione 
     +
     var a = 1;
@@ -214,9 +217,12 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
     
     Operatore ternario
     a == b ? fai-qualcosa : altrimenti-fai-qualcosaltro;
-
+       usato spesso per assegnare un valore iniziale ad una variabile
+    var variabile = a == b ? "valore1" : "valore2";
 
   Condizioni
+  
+  If
       if () {} else {}
        
       if () {} else if {} else {}
@@ -226,10 +232,10 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
   
       switch ( nomeVariabile ){
       
-        case "valore-con-cui-comparare":
+        case "valore1-con-cui-comparare":
             istruzioni;
             break;
-        case "valore-con-cui-comparare":
+        case "valore2-con-cui-comparare":
             istruzioni;  
             break;
         default:
@@ -237,6 +243,18 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
       }
     */
 
+       
+    // Determinare il tipo di dati di una variabile
+       typeof nomeVariabile;
+       -per sapere se è un array:
+       typeof nomeVariabile && nomeVariabile.hasOwnProperty("lenght")
+       -per sapere se è un NaN:
+       Number.isNan()
+       -per sapere se è un null:
+       nomeVariabile === null
+       
+       per situazioni complesse può essere utile la libreria lodash
+    
     // Cicli
     /*
         FOR
@@ -262,11 +280,35 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
             }
          }
 
+         FOR enumerativo
+         var elementoArray = [
+         "1",
+         "2",
+         "3"
+         ]
+                                                
+         for ( var ix in elementoArray ) {
+             istruzioni...
+         }
+                                                
+         var elementoOggetto = {
+         uno:"1",
+         due:"2",
+         tre:"3"
+         }
+                                                
+         for ( var ix in elementoOggetto ) {
+             if ( elementoOggetto.hasOwnProperty(ix) ) {
+                   console.log(ix, elementoOggetto[ix]);
+                   }
+         }
+                                                
          BREAK
-         per terminare il ciclo
+         per terminare un ciclo
 
          CONTINUE
          per terminare l'iterazione corrente e continuare col ciclo
+         
 
     */
 
