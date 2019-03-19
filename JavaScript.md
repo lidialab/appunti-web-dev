@@ -318,7 +318,7 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
         Importa invece l'ordine in cui sono dichiarate le variabili e richiamata la funzione
 
         function nomeFunzione(param1, param2) {
-    
+            // istruzioni
         }
 
         Named
@@ -355,17 +355,27 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
 
         console.log(nomeVariabile());
 
-   
+    // arguments --> oggetto predefinito come parametro delle funzioni
+       
     */
 
-    //  scope delle variabili
+    //  scope delle variabili: dove le variabili possono essere referenziate
+       
     /* 
         globali:    variabili dichiarate fuori dalle funzioni
-                    variabili NON dichiarate (col  var), anche se all'interno di una funzione
+                    variabili NON dichiarate (senza  var), anche se all'interno di una funzione
         locali:     variabili dichiarate nelle funzioni
                     le variabili locali sono cancellate all'uscita della funzione e quindi liberano risorse
-
-
+                    variabili dichiarate (col  var o let o const)
+        Evitare il più possibile variabili globali, potrebbero essere modificate da altri pezzi di codice (non nostri) che richiamano variabili con lo stesso nome
+       Global namespace window --> window.nomeVariabile
+       variabili blocco: dichiarate con let e const
+       
+       // **********
+       "use strict";
+       // **********
+       
+       
         ES2015 let e const
             const
             costanti
@@ -388,7 +398,26 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
 
 
     */
+       // esempi
+       
+       function isPari(numero){
+         return numero % 2 === 0;
+       }
+       
+       function dimmiQualcosa(param) {
+         var param = ( typeof param !== "undefined" ) ? param : "Stringa predefinita";
+         console.log( param );
+       }
 
+     // Funzioni Callback  
+       nomeOggetto.map()
+       nomeOggetto.forEach()
+         //ES2015
+         arrow function
+         doubleIt = number => ( number *=2 );
+         //end ES2015
+       
+       
     // Oggetti
     /*
         var nomeOggetto = new Object();
@@ -442,6 +471,9 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
 
         REFERENCE di oggetti (nuovo puntamento alla stessa area di memoria)
         var aliasOggetto = oggettoOriginale;
+       
+        NB: quando un oggetto viene passato come parametro della funzione viene passato l'oggetto originale;
+            le funzioni sono oggetti;
     */
 
     // DOM - Document Object Model, descrive le relazioni tra elementi html, è l'API per CSS e JS per modificare html
