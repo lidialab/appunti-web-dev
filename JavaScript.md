@@ -62,7 +62,9 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
         HTTP/2 attenua questo problema
     -->
     <script type="text/javascript" src="fileEsterno1.js">//JavaScript Loading Immediato</script>
+   // Async
     <script type="text/javascript" src="fileEsterno2.js" async>//JavaScript Loading Asincrono</script>
+   // Defer
     <script type="text/javascript" src="fileEsterno3.js" defer>//JavaScript Loading Differito</script>
 
     <script type="text/javascript">
@@ -89,7 +91,9 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
     // ATTENZIONE: se una variabile non viene dichiarata la prima volta che viene usata JS assume che è una nuova variabile e se la dichiara da solo...
 
     // data type
-    
+    JS è un linguaggio con loose typing
+    [ TypeScript = JS + strong typing ]
+       
     // numeri
     var intero = 1;
     var decimale = 1.678;
@@ -474,6 +478,12 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
        
         NB: quando un oggetto viene passato come parametro della funzione viene passato l'oggetto originale;
             le funzioni sono oggetti;
+       
+       // OOP JS
+       Prototypal Inheritance
+       Prototypal Chain
+       (ESxxxx class, ..., --> syntactic sugar)
+       
     */
 
     // DOM - Document Object Model, descrive le relazioni tra elementi html, è l'API per CSS e JS per modificare html
@@ -716,3 +726,9 @@ Risorse free online:
 - https://developer.mozilla.org/it/docs/Web/JavaScript
 - https://www.quirksmode.org/js/contents.html
 - https://caniuse.com/#search=JavaScript
+
+Tools avanzati:
+- Dynamic imports delle librerie: come webpack e rollup.js
+- NPM e Yarn
+- Babel: transpiler
+- TypeScript
