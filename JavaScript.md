@@ -734,3 +734,10 @@ Tools avanzati:
 - NPM e Yarn
 - Babel: transpiler
 - TypeScript
+
+Editor di codice disponibili per Linux, Mac e Windows:
+- Atom (free)
+- Brackets (free)
+- PhpStorm (30 gg di prova)
+- Sublime Text (freemium)
+- Visual Studio Code (free)
