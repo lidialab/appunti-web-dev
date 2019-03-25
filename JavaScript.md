@@ -20,22 +20,6 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
 */    
 ```
 
-```javascript
-
-```
-
-```javascript
-
-```
-
-```javascript
-
-```
-
-```javascript
-
-```
-
 
 ```html
 <!DOCTYPE html>
