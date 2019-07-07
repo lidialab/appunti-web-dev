@@ -64,7 +64,7 @@ sudo phpenmod mbstring simplexml
 
 /etc/apache2/apache2.conf
 ```
-Mailcatcher
+# Mailcatcher
 ```
 sudo apt-get install libsqlite3-dev ruby-dev -y
 sudo gem install mailcatcher
@@ -100,6 +100,30 @@ sudo phpenmod mailcatcher
 sudo service apache2 start
 ```
 Mailcatcher raggiungibile a: http://ubu1804.mydev:1080/
+
+# MySQL
+```
+sudoedit /etc/mysql.conf
+```
+File mysql.conf
+```
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mysql.conf.d/
+
+[mysqld]
+collation-server = utf8_unicode_ci
+character-set-server = utf8
+bind-address = 0.0.0.0
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 2
+```
+Riavviamo MySQL
+```
+sudo service mysql restart
+sudo chgrp adm /var/log/mysql/slow.log
+```
+
 
 # Troubleshooting
 Per correggere problemi Virtual Box Linux Additions provare:
