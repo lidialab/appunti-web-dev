@@ -33,14 +33,47 @@ login  (nomeutente)
 sudo usermod -a -G vboxsf www-data
 ```
 preparare vboxsf.conf per /sites-available/
-sudoedit ports.conf per aggiungere Listen 8080
+```
+<VirtualHost *:80 *:8080>
+  ServerName nomeserver
+  ServerAlias *.mydev
+
+  LogLevel info
+  ErrorLog ${APACHE_LOG_DIR}/vboxsf-error.log
+  CustomLog ${APACHE_LOG_DIR}/vboxsf-access.log combined
+
+  RewriteEngine On
+
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride All
+  </Directory>
+
+  <Directory /media/>
+    Order allow,deny
+    Allow from all
+    Require all granted
+  </Directory>
+
+  <Location /server-status>
+    SetHandler server-status
+    Order allow,deny
+    Allow from all
+    Require all granted
+  </Location>
+
+  UseCanonicalName Off
+  VirtualDocumentRoot /media/sf_nomecartellacondivisa
+</VirtualHost>
+```
+
 ```
 sudo a2ensite vboxsf
 sudo a2dissite 000-default
 sudo a2enmod rewrite vhost_alias
 sudo service apache2 restart
 ```
-^ non ha funzionato
+
 ```
 sudoedit /etc/php/7.2/mods-available/phpcustom.ini
 ; Custom shared config
@@ -92,14 +125,14 @@ sudoedit /etc/php/7.2/mods-available/mailcatcher.ini
 File mailcatcher.ini:
 ```
 sendmail_path = /usr/local/bin/catchmail
-sendmail_from = mailcatcher@ubu1804.mydev
+sendmail_from = mailcatcher@nomeserver.mydev
 ```
 Avviamo mailcatcher
 ```
 sudo phpenmod mailcatcher
 sudo service apache2 start
 ```
-Mailcatcher raggiungibile a: http://ubu1804.mydev:1080/
+Mailcatcher raggiungibile a: http://nomeserver.mydev:1080/
 
 # MySQL
 ```
