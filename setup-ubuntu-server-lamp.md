@@ -156,7 +156,15 @@ Riavviamo MySQL
 sudo service mysql restart
 sudo chgrp adm /var/log/mysql/slow.log
 ```
+# phpmyadmin
+Scaricare phpmyadmin e scompattarlo
 
+Entrare nella console mysql e creare un utente ad hoc per phpmyadmin
+```
+CREATE USER 'master'@'%' IDENTIFIED BY 'master';
+GRANT ALL PRIVILEGES ON *.* TO 'master'@'%' WITH GRANT OPTION;
+flush privileges;
+```
 
 # Troubleshooting
 Per correggere problemi Virtual Box Linux Additions provare:
