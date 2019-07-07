@@ -1,9 +1,9 @@
 # Macchina Virtuale su VirtualBox
-Ubuntu Server LTS 64
-2GB RAM - disco virtuale allocato dinamicamente (un po' più lento), VDI (VBox), 10GB - 2 CPU, enable PAE/NX
-~Port forwarding~ non funziona, riprovare, per ora Bridge
-Cartella condivisa in auto-mount
-No audio
+Ubuntu Server LTS 64:
+2GB RAM - disco virtuale allocato dinamicamente (un po' più lento), VDI (VBox), 10GB - 2 CPU, enable PAE/NX ; 
+~Port forwarding~ non funziona, riprovare, per ora Bridge ; 
+Cartella condivisa in auto-mount ; 
+No audio ; 
 SSH, autenticazione con chiavi cifrate
 ```
 sudo apt-get update
@@ -13,6 +13,7 @@ sudo reboot
 installiamo sw mancante (nano, zip, unzip, curl, man-db, acpid, git,...) e quello necessario per le V.Box G.Additions (build-essential, virtualbox-dkms, module-assistant)
 ```
 sudo apt-get install -y build-essential virtualbox-dkms nano zip unzip curl man-db acpid git module-assistant gcc make perl
+sudo apt-get install sendmail-bin -y
 sudo reboot
 sudo mkdir /media/cdrom
 sudo mount /dev/cdrom /media/cdrom
@@ -69,7 +70,7 @@ sudo apt-get install libsqlite3-dev ruby-dev -y
 sudo gem install mailcatcher
 sudoedit /lib/systemd/system/mailcatcher.service
 ```
-inizio
+File mailcatcher.service:
 ```
 [Unit]
 Description=MailCatcher Service
@@ -81,21 +82,22 @@ ExecStart=/usr/local/bin/mailcatcher --foreground --ip 0.0.0.0
 [Install]
 WantedBy=multi-user.target
 ```
-fine
 Lo avviamo e impostiamo che parta in automatico ad ogni reboot
 ```
 sudo service mailcatcher start
 sudo systemctl enable mailcatcher.service
 
 sudoedit /etc/php/7.2/mods-available/mailcatcher.ini
-
+```
+File mailcatcher.ini:
+```
 sendmail_path = /usr/local/bin/catchmail
 sendmail_from = mailcatcher@ubu1804.mydev
-
+```
+Avviamo mailcatcher
+```
 sudo phpenmod mailcatcher
 sudo service apache2 start
-
-sudo apt install sendmail-bin
 ```
 Mailcatcher raggiungibile a: http://ubu1804.mydev:1080/
 
