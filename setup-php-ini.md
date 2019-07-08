@@ -1,6 +1,9 @@
 max_execution_time
+
 upload_max_filesize
+
 memory_limit
+
 post_max_size
 
 
