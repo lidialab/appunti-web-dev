@@ -1,4 +1,20 @@
-# Gestione pacchetti Debian
+## shell
+shell in uso:
+```
+echo $0
+```
+
+percorso della shell in uso:
+```
+echo $SHELL
+```
+
+modificare la shell in uso al login dal file /etc/passwd:
+```
+nomeutente:x:1001:1001::/home/nomeutente:/bin/nomeshell
+```
+
+## Gestione pacchetti Debian
 
 ## dpkg
 
