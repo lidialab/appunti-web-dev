@@ -4,17 +4,20 @@
 
 ## apt ~ apt-get
 
-apt-get
-
-apt
-
+Con Debian Jessie è stato introdotto apt che unisce funzionalità di apt-get e apt-cache e ha migliorato l'output a favore dell'utente. Per casi complessi sarà preferibile utilizzare apt-get. 
 
 ```
-apt-cache search xyz
-sudo apt install xyz
-sudo apt remove xyz
+apt search stringa
+sudo apt install nome_pacchetto
+sudo apt remove nome_pacchetto
 sudo apt update
 sudo apt upgrade
+
+apt full-upgrade
+apt autoremove
+apt list -a nome_pacchetto
+apt show nome_pacchetto
+apt show -a nome_pacchetto
 ```
 
 ## Accesso remoto
