@@ -24,8 +24,20 @@ Quando un file php è costituito da solo codice php si può omettere il tag di c
 */
 I commenti php non vengono inclusi nel file generato per il browser
 
+## Output
+echo "Hello world";
+echo 'Hello world';
+
+echo "$var"; funziona con i doppi apici
+echo "{$var}"; così è esplicito che si vuole stampare il valore della variabile
+
+## Concatenazione
+. 
+
 ## Variabili
-Case sensitive
+iniziano con un $ seguito da una lettera o da un underscore (meglio evitare quest'ultimo)
+sono case sensitive
+
 ```php
 $nomeVariabile = 'hello';
 ```
