@@ -1,4 +1,13 @@
 # PHP
+## Cos'è
+È un linguaggio di scripting lato server
+
+# Estensione
+.php
+
+# Preprocessor
+Il file .php viene elaborato e genera il file HTML che sarà restituito al browser
+
 ## Tag di apertura e chiusura
 ```php
 <?php 
@@ -8,6 +17,12 @@
 Quando un file php è costituito da solo codice php si può omettere il tag di chiusura alla fine del file.
 
 È utile per prevenire linee vuote o a capo non voluti, dopo il tag di chiusura.
+
+## Commenti
+// commenti in linea
+/* Commenti multi riga
+*/
+I commenti php non vengono inclusi nel file generato per il browser
 
 ## Variabili
 Case sensitive
