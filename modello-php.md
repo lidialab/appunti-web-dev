@@ -2,10 +2,10 @@
 ## Cos'è
 È un linguaggio di scripting lato server
 
-# Estensione
+## Estensione
 .php
 
-# Preprocessor
+## Preprocessor
 Il file .php viene elaborato e genera il file HTML che sarà restituito al browser
 
 ## Tag di apertura e chiusura
@@ -48,10 +48,10 @@ sono case sensitive
 $nomeVariabile = 'hello';
 ```
 
-## Stringhe
+### Stringhe
 https://www.php.net/manual/en/ref.strings.php
 
-## Numeri interi
+### Numeri interi
 += 
 -=
 *=
@@ -59,18 +59,85 @@ https://www.php.net/manual/en/ref.strings.php
 
 ++
 --
+https://www.php.net/manual/en/ref.math.php
 
+### Numeri con decimali
+https://www.php.net/manual/en/ref.math.php
 
-## Numeri con decimali
-
-
-## Array
-### Definizione
+### Array
+#### Definizione
 $nomearray = array();
-### Definizione e assegnazione
+
+#### Definizione e assegnazione
 $nomeArray = array(1,2,3);
-### Utilizzo
+$arrayMisto = array (1,2,3, "ciao", array( "a", "b", "c") );
+
+#### notazione breve da PHP 5.4 in poi
+$array = [1,2,3];
+
+
+#### Assegnazione
+$nomearray[5] = "sesto";
+$nomearray[] = "ultimo";
+
+#### Array associativi
+Insieme di oggetti indicizzati per coppia di valori
+
+$arrayAssoc = array("nome" => "Lidia", "cognome" => "Pellizzaro");
+
+echo $arrayAssoc["nome"];
+
+$arrayAssoc["nome"] = "LidiaLAB";
+
+$nomeArray = array(0 => 1, 1 => 2, 2 => 3);
+
+
+#### Utilizzo
 echo $nomearray[0]; // -->1
+echo $arrayMisto[3][0];
+
+<pre>
+echo print_r($arrayMisto);
+</pre>
+
+#### Funzioni per gli array
+https://www.php.net/manual/en/ref.array.php
+
+### Valori booleani
+//case insensitive true TRUE false FALSE
+true    //-->1
+false   //-->no valore
+
+### NULL
+//case insensitive null NULL
+$varNull = null;
+
+
+### empty   *** N.B. ***
+  ""
+  null
+  0
+  0.0
+  "0"
+  false
+  array()
+
+$varEmpty = ""; //stringa vuota
+
+### casting
+$var = 1;
+$var2 = (int) $var;
+  string
+  int, integer
+  float
+  array
+  bool, boolean
+
+gettype();
+settype();
+
+## COSTANTI
+define ("NOME_COSTANTE", 3.14);
 
 
 ## Funzioni
