@@ -32,7 +32,13 @@ echo "$var"; funziona con i doppi apici
 echo "{$var}"; così è esplicito che si vuole stampare il valore della variabile
 
 ## Concatenazione
-. 
+echo "uno" . " " . "due";
+$uno = "uno";
+$due = "due";
+$tre = $uno;
+$tre .= " ";
+$tre .= $due;
+echo $tre;
 
 ## Variabili
 iniziano con un $ seguito da una lettera o da un underscore (meglio evitare quest'ultimo)
@@ -41,6 +47,31 @@ sono case sensitive
 ```php
 $nomeVariabile = 'hello';
 ```
+
+## Stringhe
+https://www.php.net/manual/en/ref.strings.php
+
+## Numeri interi
++= 
+-=
+*=
+/=
+
+++
+--
+
+
+## Numeri con decimali
+
+
+## Array
+### Definizione
+$nomearray = array();
+### Definizione e assegnazione
+$nomeArray = array(1,2,3);
+### Utilizzo
+echo $nomearray[0]; // -->1
+
 
 ## Funzioni
 ```php
