@@ -236,6 +236,22 @@ for($ix = 0; $ix <= 10; $ix++) {
    echo $ix . "<br>";
 }
 
+### For each
+foreach($array as $valore) {
+        echo $valore;
+      }
+// e per array associativi
+foreach($array as $chiave => $valore) {
+        echo $chiave . " " . $valore;
+      }
+### Continue
+iterazione successiva
+continue(n) per sapere a quale ciclo riferirsi, default è 1
+### Break
+interrompi
+break(n) per sapere a quale ciclo riferirsi, default è 1
+
+
 ## Input
 ```php
 $_SERVER
