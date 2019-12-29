@@ -76,7 +76,7 @@ $arrayMisto = array (1,2,3, "ciao", array( "a", "b", "c") );
 $array = [1,2,3];
 
 
-#### Assegnazione
+#### Assegnazione =
 $nomearray[5] = "sesto";
 $nomearray[] = "ultimo";
 
@@ -137,6 +137,7 @@ gettype();
 settype();
 
 ## COSTANTI
+// senza segno del dollaro
 define ("NOME_COSTANTE", 3.14);
 
 
@@ -150,24 +151,74 @@ hello($nomeVariabile);
 ```
 
 ## Strutture di controllo
+### IF
 ```php
-if() {
+if ( expression ) {
 ...
 }
   else {
   ...
   }
 
-if() {
+if ( expression ) {
 ...
 }
-  else if {
+  elseif {
   ...
   }
     else {
     ...
     }
 ```
+ATTENZIONE se una variabile viene definitiva in un statement dell'if che non viene eseguito fuori da quel if non esiste o viene creata per la prima volta, OKKIO
+
+## Switch
+      switch ($var) {
+        case 0:
+          echo "a";
+          break;
+        case 1:
+          echo "z";
+          break;
+        default:
+          echo "no one";
+          break;
+      }
+      
+      switch ($var) {
+        case 0:
+          echo "a";
+          break;
+        case 1:
+        case 2:
+        case 3: // utilizzare lo stesso statement per più casistiche
+          echo "z";
+          break;
+        default:
+          echo "no one";
+          break;
+      }
+
+ATTENZIONE utilizzare break altrimenti vengono eseguiti tutti i case dopo quello risultato true
+
+
+## Operatori logici
+### Comparazione
+equal: ==
+!=
+identical: ===
+!==
+<
+>
+<=
+>=
+<>
+&&
+||
+!
+
+
+
 
 ## Input
 ```php
