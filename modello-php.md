@@ -216,9 +216,25 @@ identical: ===
 &&
 ||
 !
+## Operatori matematici
++
+-
+*
+/
+
+### % Modulo
+...
 
 
-
+## Cicli
+### While
+while ( expression ) {
+statement;
+}
+### For
+for($ix = 0; $ix <= 10; $ix++) {
+   echo $ix . "<br>";
+}
 
 ## Input
 ```php
