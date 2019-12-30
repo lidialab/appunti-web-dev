@@ -284,19 +284,25 @@ break(n) per sapere a quale ciclo riferirsi, default è 1
 ## Funzioni
 ### Definizione
 ```php
-function nomeFunzione($nomeArgomento1, $nomeArgomento2) {
+function nomeFunzione($nomeArgomento1, $nomeArgomento2=valoreDefault) {
   statement;
 }
 ```
 ### Utilizzo
 ```php
-hello($nomeVariabile);
+nomeFunzione($nomeArgomento1, $nomeArgomento2);
+nomeFunzione($nomeArgomento1); // se c'è un valore di default l'argomento può essere saltato
 ```
 ### Ritornare un valore da una funzione
 ```php
 return($ris);
 ```
 Return termina l'esecuzione della funzione
+
+### Scope di una variabile
+Locale, all'interno di una funzione
+Globale
+
 
 ## Input
 ```php
