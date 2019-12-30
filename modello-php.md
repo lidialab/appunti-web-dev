@@ -292,15 +292,14 @@ function nomeFunzione($nomeArgomento1, $nomeArgomento2) {
 ```php
 hello($nomeVariabile);
 ```
-
+### Ritornare un valore da una funzione
+```php
+return($ris);
+```
+Return termina l'esecuzione della funzione
 
 ## Input
 ```php
 $_SERVER
 $_POST
 ```
-
-
-
-
-
