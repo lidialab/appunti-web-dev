@@ -317,3 +317,24 @@ $_POST
 - utilizzare il display degli errori
 - controllare i log
 - utilizzare tool come Xdebug
+
+# php.ini
+Con phpinfo(); si può vedere qual è la posizione del file php.ini caricato "loaded configuration file"
+Quando di apporta una modifica si deve riavviare il server web
+date.timezone
+display_errors
+error_reporting
+
+## .htaccess
+Alcune modifiche possono essere apportare tramite il file .htaccess nei server web apache, se consentito dall'hosting
+php_value direttiva valore
+php_flag direttiva on
+php_flag direttiva off
+
+## user.ini
+Alcune modifiche possono essere apportare tramite il file user.ini, se consentito dall'hosting
+Lo si compila come il php.ini
+
+## runtime_config.php
+Alcune modifiche possono essere apportare tramite l'esecuzione di uno script php, se consentito dall'hosting
+Si utilizzano apposite funzioni.
