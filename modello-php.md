@@ -309,3 +309,11 @@ Globale
 $_SERVER
 $_POST
 ```
+# Troubleshooting
+- errori di sintassi
+- visualizzare le variabili di cui si sospetta un valore inaspettato (echo/print_r/gettype/var_dump/get_defined_vars/debug_backtrace)
+- provare ad eseguire ```phpinfo();```
+- verificare i path
+- utilizzare il display degli errori
+- controllare i log
+- utilizzare tool come Xdebug
