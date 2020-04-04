@@ -62,6 +62,20 @@ $nomeVariabile = 'hello';
 
 ### Stringhe
 https://www.php.net/manual/en/ref.strings.php
+apici e virgolette sono mixabili, ma vanno sempre accoppiati e soggetti ad escape quando necessario
+
+NB: con echo è necessario utilizzare le virgolette affinché il contenuto di una variabile sia visualizzato
+
+#### Sequenze di escape
+\'
+\"
+\\
+\n new line
+\r carriage return
+\t tab
+\$
+
+NB: funzionano solo con le virgolette, tranne \' che funziona anche tra apici
 
 ### Numeri interi
 ```php
