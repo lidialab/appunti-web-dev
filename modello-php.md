@@ -1,12 +1,12 @@
 # PHP
 ## Cos'è
-È un linguaggio di scripting lato server
+È un linguaggio di scripting lato server (server side)
 
 ## Estensioni
 L'estensione principale è .php
 
 ## Preprocessor
-Il file .php viene elaborato e ne viene generato il file HTML che sarà restituito al browser
+Il file .php viene elaborato e ne viene generato il codice HTML che sarà restituito al browser
 
 ## Tag di apertura e chiusura
 ```php
@@ -18,9 +18,14 @@ Quando un file php è costituito da solo codice php si può omettere il tag di c
 
 È utile per prevenire linee vuote o a capo non voluti, dopo il tag di chiusura.
 
+## Spazi extra
+php non li considera
+si possono aggiungere prima e dopo il simbolo di assegnazione o leparentesi per migliorare la lettura del codice
+
 ## Commenti
 ```php
-// commenti in linea
+// commento in linea
+#  commento in linea
 /* Commenti multi riga
 */
 ```
@@ -48,6 +53,7 @@ echo $tre;
 
 ## Variabili
 iniziano con un $ seguito da una lettera o da un underscore (meglio evitare quest'ultimo)
+sono permessi lettere, cifre e underscore
 sono case sensitive
 
 ```php
@@ -309,6 +315,13 @@ Globale
 $_SERVER
 $_POST
 ```
+## Output
+### echo
+echo può visualizzare una serie di dati separati da ","
+
+### print
+print può visualizzare un solo argomento 
+
 # Troubleshooting
 - errori di sintassi
 - visualizzare le variabili di cui si sospetta un valore inaspettato (echo/print_r/gettype/var_dump/get_defined_vars/debug_backtrace)
