@@ -2,11 +2,11 @@
 ## Cos'è
 È un linguaggio di scripting lato server
 
-## Estensione
-.php
+## Estensioni
+L'estensione principale è .php
 
 ## Preprocessor
-Il file .php viene elaborato e genera il file HTML che sarà restituito al browser
+Il file .php viene elaborato e ne viene generato il file HTML che sarà restituito al browser
 
 ## Tag di apertura e chiusura
 ```php
