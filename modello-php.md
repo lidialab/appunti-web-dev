@@ -112,19 +112,30 @@ $array = [1,2,3];
 #### Assegnazione =
 ```php
 $nomearray[5] = "sesto";
-$nomearray[] = "ultimo";
+$nomearray[] = "ultimo"; // aggiunge l'elemento in coda
 ```
 
 #### Array associativi
 Insieme di oggetti indicizzati per coppia di valori
+chiave + valore
+chiave deve essere una stringa univoca
+
 ```php
 $arrayAssoc = array("nome" => "Lidia", "cognome" => "Pellizzaro");
 
 echo $arrayAssoc["nome"];
 
+echo " {$arrayAssoc["nome"]} ";
+
 $arrayAssoc["nome"] = "LidiaLAB";
 
 $nomeArray = array(0 => 1, 1 => 2, 2 => 3);
+
+// notazione breve
+$altroArray = [
+'x' => 'xxx',
+'y' => 'yyy'
+];
 ```
 
 #### Utilizzo
@@ -365,3 +376,7 @@ Lo si compila come il php.ini
 ## runtime_config.php
 Alcune modifiche possono essere apportare tramite l'esecuzione di uno script php, se consentito dall'hosting
 Si utilizzano apposite funzioni.
+
+# Approfondimenti
+Sintassi heredoc, utile nella costruzione di query per DB
+
