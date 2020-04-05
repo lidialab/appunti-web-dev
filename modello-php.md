@@ -152,14 +152,23 @@ echo print_r($arrayMisto);
 https://www.php.net/manual/en/ref.array.php
 
 ### Valori booleani
-//case insensitive true TRUE false FALSE
+ESPLICITI: TRUE e FALSE
+Le keywords TRUE (true) FALSE (false) sono case insensitive 
+Le keywords non vanno inserite tra apici o virgolette
 ```php
 true    //-->1
 false   //-->no valore
 ```
 
+IMPLICITI
+FALSE impliciti:
+0, 0.0, "0", '', ""
+array vuoto
+NULL
+variabili solamente dichiarate, ma non valorizzate
+
 ### NULL
-//case insensitive null NULL
+case insensitive null NULL
 ```php
 $varNull = null;
 ```
@@ -196,6 +205,36 @@ settype();
 ```php
 define ("NOME_COSTANTE", 3.14);
 ```
+
+## Operatori logici
+```php
+&&
+||
+!
+```
+### Comparazione
+```php
+equal: ==
+!=
+identical: ===
+!==
+<
+>
+<=
+>=
+<>
+```
+
+## Operatori matematici
+```php
++
+-
+*
+/
+```
+
+### % Modulo
+...
 
 ## Strutture di controllo
 ### IF
@@ -248,36 +287,6 @@ ATTENZIONE se una variabile viene definitiva in un statement dell'if che non vie
       }
 ```
 ATTENZIONE utilizzare break altrimenti vengono eseguiti tutti i case dopo quello risultato true
-
-
-## Operatori logici
-### Comparazione
-```php
-equal: ==
-!=
-identical: ===
-!==
-<
->
-<=
->=
-<>
-&&
-||
-!
-```
-
-## Operatori matematici
-```php
-+
--
-*
-/
-```
-
-### % Modulo
-...
-
 
 ## Cicli
 ### While
@@ -343,6 +352,7 @@ $_POST
 ## Output
 ### echo
 echo può visualizzare una serie di dati separati da ","
+c'è una versione abbreviata ```<?=  ?>```
 
 ### print
 print può visualizzare un solo argomento 
