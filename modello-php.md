@@ -78,11 +78,14 @@ NB: con echo è necessario utilizzare le virgolette affinché il contenuto di un
 NB: funzionano solo con le virgolette, tranne \' che funziona anche tra apici
 
 ### Numeri interi
+Operazioni con assegnazione
 ```php
 += 
 -=
 *=
 /=
+%=
+**=
 
 ++
 --
@@ -206,13 +209,14 @@ settype();
 define ("NOME_COSTANTE", 3.14);
 ```
 
-## Operatori logici
+## Operatori
+### Operatori logici
 ```php
 &&
 ||
 !
 ```
-### Comparazione
+### Operatori di comparazione
 ```php
 equal: ==
 !=
@@ -225,15 +229,18 @@ identical: ===
 <>
 ```
 
-## Operatori matematici
+### Operatori aritmetici
 ```php
 +
 -
 *
 /
+%    Modulo
+**   Esponenziale (da PHP 5.6)
 ```
+NB: -$var --> negativo
 
-### % Modulo
+### Precedenze degli operatori
 ...
 
 ## Strutture di controllo
@@ -265,6 +272,7 @@ if ( xxx ) : yyy elseif ( zzz ) else : www endif;
 #### Operatore ternario
 $res = condizione ? vero : falso;
 $res = $var ?: falso; //versione breve in cui se è vero il valore di $var è assegnato a $res
+$res = $var ?? falso; //PHP 7 ; versione breve in cui se è vero il valore di $var è assegnato a $res, se $var non è definito viene calcolata l'espressione per false.
 
 ### Switch
 ```php
