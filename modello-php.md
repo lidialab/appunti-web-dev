@@ -375,11 +375,18 @@ function nomeFunzione($nomeArgomento1, $nomeArgomento2=valoreDefault) {
   statement;
 }
 ```
+È buona pratica far precedere al nome di funzione un acronimo che ne renda il nome univoco.
+Es: ll_nomefunzione
+
 ### Utilizzo
 ```php
 nomeFunzione($nomeArgomento1, $nomeArgomento2);
 nomeFunzione($nomeArgomento1); // se c'è un valore di default l'argomento può essere saltato
+nomeFunzione(&$nomeArgomento1); // viene passato il riferimento alla memoria della variabile vera e propria che verrà modificata se citata all'interno della funzione
 ```
+### callback
+... es: usort()
+
 ### Ritornare un valore da una funzione
 ```php
 return($ris);
