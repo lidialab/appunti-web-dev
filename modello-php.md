@@ -324,23 +324,30 @@ while ( expression ) {
 statement;
 }
 ```
+### Do While
+```php
+do {
+statement;
+} while ( expression );
+```
 ### For
 ```php
-for($ix = 0; $ix <= 10; $ix++) {
+for ( $ix = 0; $ix <= 10; $ix++ ) {
    echo $ix . "<br>";
 }
 ```
 
 ### For each
 ```php
-foreach($array as $valore) {
+foreach ($array as $valore) {
         echo $valore;
       }
 // e per array associativi
-foreach($array as $chiave => $valore) {
+foreach ($array as $chiave => $valore) {
         echo $chiave . " " . $valore;
       }
 ```
+
 ### Continue
 iterazione successiva
 continue(n) per sapere a quale ciclo riferirsi, default è 1
@@ -348,7 +355,18 @@ continue(n) per sapere a quale ciclo riferirsi, default è 1
 interrompi
 break(n) per sapere a quale ciclo riferirsi, default è 1
 
+### Sintassi alternative
+while (condizione) : 
+  echo "fai qualcosa";
+endwhile;
 
+for (condizione) :
+  echo "fai qualcosa";
+endfor;
+
+foreach (condizione) :
+  echo "fai qualcosa";
+endforeach;
 
 ## Funzioni
 ### Definizione
