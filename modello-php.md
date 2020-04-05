@@ -258,7 +258,15 @@ if ( expression ) {
 ```
 ATTENZIONE se una variabile viene definitiva in un statement dell'if che non viene eseguito fuori da quel if non esiste o viene creata per la prima volta, OKKIO
 
-## Switch
+#### Sintassi IF breve
+if ( xxx ) : yyy ;
+if ( xxx ) : yyy elseif ( zzz ) else : www endif;
+
+#### Operatore ternario
+$res = condizione ? vero : falso;
+$res = $var ?: falso; //versione breve in cui se è vero il valore di $var è assegnato a $res
+
+### Switch
 ```php
       switch ($var) {
         case 0:
@@ -285,7 +293,20 @@ ATTENZIONE se una variabile viene definitiva in un statement dell'if che non vie
           echo "no one";
           break;
       }
+      
+            
+      switch ($var) {
+        case $var < 0:
+          echo "a";
+          break;
+        case $var > 0:
+          echo "z";
+          break;
+        case $var == 0:
+          echo "az";
+      }
 ```
+I valori di comparazione possono essere boolean, number, string. Per una comparazione diversa da "è uguale a" si deve costruire l'intera espressione che così sarà valutata se vera o falsa (boolean).
 ATTENZIONE utilizzare break altrimenti vengono eseguiti tutti i case dopo quello risultato true
 
 ## Cicli
