@@ -17,10 +17,13 @@ Il file .php viene elaborato e ne viene generato il codice HTML che sarà restit
 Quando un file php è costituito da solo codice php si può omettere il tag di chiusura alla fine del file.
 
 È utile per prevenire linee vuote o a capo non voluti, dopo il tag di chiusura.
+## Sintassi istruzioni
+Vanno chiuse obbligatoriamente da ";".
 
 ## Spazi extra
 php non li considera
-si possono aggiungere prima e dopo il simbolo di assegnazione o leparentesi per migliorare la lettura del codice
+si possono aggiungere prima e dopo il simbolo di assegnazione o le parentesi per migliorare la lettura del codice
+Ma NON vanno messi quando in un echo si richiama una variabile tra parentesi graffe.
 
 ## Commenti
 ```php
@@ -401,8 +404,13 @@ Globale
 ## Input
 ```php
 $_SERVER
+$_GET
 $_POST
 ```
+Le variabili ```$_GET``` e ```$_POST``` sono entrambe create e presenti, ma solo un form le può valorizzare.
+Utilizzare GET solo per i form di ricerca, così possono essere memorizzati nei preferiti includendo la stringa cercata.
+html_entities converte "tutto" tranne apici singoli.
+
 ## Output
 ### echo
 echo può visualizzare una serie di dati separati da ","
@@ -439,6 +447,9 @@ Può essere utile definire il percorso degli inlcude con set_include_path, in ta
 - utilizzare il display degli errori
 - controllare i log
 - utilizzare tool come Xdebug
+- se un file che viene incluso contiene righe vuote dopo aver chiuso il tag php l'header del file HTML viene generato e può causare problemi di HEADERS già inviati.
+- se il problema riguarda degli include/require controllare anche i permessi dei file o se i file siano corrotti, in ques'ultimo caso rieffettuare l'upload dei file
+
 
 # php.ini
 Con phpinfo(); si può vedere qual è la posizione del file php.ini caricato "loaded configuration file"
@@ -459,7 +470,7 @@ Lo si compila come il php.ini
 
 ## runtime_config.php
 Alcune modifiche possono essere apportare tramite l'esecuzione di uno script php, se consentito dall'hosting
-Si utilizzano apposite funzioni.
+Si utilizzano apposite funzioni come ini_set('display_errors', '1'); .
 
 # Approfondimenti
 Sintassi heredoc, utile nella costruzione di query per DB
