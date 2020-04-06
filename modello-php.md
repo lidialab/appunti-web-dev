@@ -411,7 +411,27 @@ c'è una versione abbreviata ```<?=  ?>```
 ### print
 print può visualizzare un solo argomento 
 
-# Troubleshooting
+## Oggetti
+...
+
+## Includere un file
+include //se il file manca segnala un warning, ma continua
+include_once //viene incluso una sola volta anche se menzionato più volte nello script
+
+require //se il file manca va in errore
+require_once //viene incluso una sola volta anche se menzionato più volte nello script
+
+Possono essere utilizzate diverse estensioni, ma meglio utilzzare .php (se proprio si vuole utilizzare "inc" optare per .inc.php).
+NB: la definizione di una funzione contenuta in un file esterno DEVE essere inclusa PRIMA dell'utilizzo della funzione. A differenza di un unico file php in cui la funzione è sia definita che utilizzata e l'ordine non ha importanza.
+
+Non servono le parentesi. Meglio utilizzare un path relativo.
+
+Per riferirsi ad altri file in un file che viene incluso utilizzare una variabile che definisce il percorso principale e viene definita nel file che lo richiama.
+
+Può essere utile fare debugging con get_include_path()
+Può essere utile definire il percorso degli inlcude con set_include_path, in tal caso è raccomandato utilizzare come separatore di cartelle la variale PATH_SEPARATOR.
+
+## Troubleshooting
 - errori di sintassi
 - visualizzare le variabili di cui si sospetta un valore inaspettato (echo/print_r/gettype/var_dump/get_defined_vars/debug_backtrace)
 - provare ad eseguire ```phpinfo();```
