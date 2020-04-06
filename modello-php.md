@@ -475,3 +475,7 @@ Si utilizzano apposite funzioni come ini_set('display_errors', '1'); .
 # Approfondimenti
 Sintassi heredoc, utile nella costruzione di query per DB
 
+## Date e orario
+### 32bit vs 64bit
+
+
