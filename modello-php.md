@@ -477,5 +477,10 @@ Sintassi heredoc, utile nella costruzione di query per DB
 
 ## Date e orario
 ### 32bit vs 64bit
+Si basa su timestamp e calcola le date da una data fissata come differenza di secondi. La data dipende dal sistema, se è a 32bit o 64bit.
+x86: 1970-01-01 (1901-12-31 --> 2038-01-19)
+x64: (sistema x64 con binari php x64) -290 miliardi di anni e +290 miliardi di anni
+Se si utilizzano gli oggetti invece viene sempre supportato il range completo e gli UTC indipendenti dal sistema su cui sono eseguiti.
 
-
+PHP 4: il range supportato dalle funzioni date(), getdate(), strtotime() dipende se girano sun php compilato a 32 o 64 bit, utilizzano il fuso orario del sistema in cui girano
+PHP 5.2: la classe DateTime supporta sempre il range esteso e l'utilizzo di fusi orari indipendenti dal sistema in cui gira, anche se a 32bit
