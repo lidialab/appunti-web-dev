@@ -67,7 +67,7 @@ Da https://www.mysql.com/downloads/
 
 (Download MySQL Installer) https://dev.mysql.com/downloads/windows/installer/5.7.html
 
-(mysql-installer-community-5.7.21.0.msi) https://dev.mysql.com/downloads/file/?id=474803
+(mysql-installer-community-5.7.x.x.msi) https://dev.mysql.com/downloads/file/?id=474803 (include MySQL Workbench CE)
 
 Installare anche MySQL Workbench CE, documentazione ed esempi.
 
