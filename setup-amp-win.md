@@ -4,7 +4,7 @@
 
 Il sito ufficiale https://httpd.apache.org/ per i binari per Windows rimanda a partner terzi https://httpd.apache.org/docs/current/platform/windows.html#down
 
-Sto provando questo http://www.apachelounge.com/download/ in base a un corso che sto seguendo e poiché raccomandato col successivo download di PHP (vedi http://windows.php.net/download/ barra laterale sinistra), prerequisito è avere installato Windows® Visual Studio C++ 2017 (aka VC15) per la propria versione di Windows (installare anche la x86)
+Sto provando questo http://www.apachelounge.com/download/ in base a un corso che sto seguendo e poiché raccomandato col successivo download di PHP (vedi http://windows.php.net/download/ barra laterale sinistra), prerequisito è avere installato Windows® Visual Studio C++ 2017 (aka VC15/VC16/.. https://support.microsoft.com/it-it/help/2977003/the-latest-supported-visual-c-downloads) per la propria versione di Windows (installare anche la x86)
 
 Dopo aver scaricato e scompattato lo zip sostituire nel file httpd.conf il percorso della cartella Apache da 
 
