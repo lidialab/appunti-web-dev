@@ -60,8 +60,9 @@ extension=php_curl.dll
 extension=php_gd2.dll
 extension=php_gettext.dll
 extension=php_openssl.dll
+extension=mbstring
 ```
-
+Riavviare Apache
 
 Nel file httpd.conf inserire le seguenti righe in coda al file:
 
