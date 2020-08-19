@@ -45,8 +45,23 @@ Il sito ufficiale http://www.php.net/ - http://it2.php.net/downloads.php per i b
 Scaricare la versione necessaria (es: la 7 Thread Safe per x64), scompattare e rinominare per brevità (nel mio caso ad esempio c:\AMP\php7), prerequisito è avere installato Windows® Visual Studio C++ 201x (aka VCxx) per la versione php scelta (installare anche la x86)
 
 Dalla directory Php copiare ```php.ini-development``` e rinominarlo ```php.ini``` 
-Essendo un ambiente di sviluppo si può attivare la visualizzzazione degli errori decommentando o inserendo la riga 
+Essendo un ambiente di sviluppo si può attivare la visualizzazione degli errori decommentando o inserendo la riga 
 ```display_errors = On```
+
+Specificare la directory di caricamento dei moduli
+Esempio:
+```extension_dir = "C:/AMP/php/ext"```
+e attivare 
+
+```
+extension=php_mysqli.dll
+extension=php_pdo_mysql.dll
+extension=php_curl.dll
+extension=php_gd2.dll
+extension=php_gettext.dll
+extension=php_openssl.dll
+```
+
 
 Nel file httpd.conf inserire le seguenti righe in coda al file:
 
