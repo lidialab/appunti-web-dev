@@ -28,11 +28,11 @@ Dalla cartella che ospita il repo, elenca i file nuovi o modificati
 ```
 git status
 ```
-**Aggiungere file ad un repo**
+**Aggiungere modifiche ad un repo (staging)**
 
 Dalla cartella che ospita il repo, dove ci sono nuovi file
 
-Aggiungere TUTTI i nuovi file
+Aggiungere TUTTI i nuovi file e aggiornare quelli modificati
 ```
 git add .
 ```
@@ -40,6 +40,16 @@ git add .
 Aggiungere specifici file
 ```
 git add nomefile.ext
+```
+
+Aggiornare i file modificati e togliere quelli cancellati
+```
+git add -u
+```
+
+Caricare TUTTE le modifiche (anche cancellare file)
+```
+git add -A
 ```
 
 **Effettuare COMMIT in un repo**
