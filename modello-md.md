@@ -2,10 +2,15 @@
 
 ## Titoli
 ``# H1``
+
 ``## H2``
+
 ``### H3``
+
 ``#### H4``
+
 ``##### H5``
+
 ``###### H6``
 
 BP: mettere lo spazio dopo # e una riga vuota prima e dopo.
@@ -28,13 +33,16 @@ BP: mettere una riga vuota prima e dopo.
 
 ## Citazioni
 ``> Citazione``
+
 ``>> Citazioni annidate``
 
 BP: mettere una riga vuota prima e dopo.
 
 ## Elenco ordinato
 ``1. elemento``
+
 ``2. elemento``
+
 ``3. elemento``
 
 ## Elenco non ordinato
@@ -64,8 +72,11 @@ Si può effettuare l'escape di:
 
 ## Tabella
 `` | Titolo della colonna | Titolo della colonna | ``
+
 `` | ----------- | ----------- | ``
+
 `` | Testo della cella | Testo della cella | ``
+
 `` | Testo della cella | Testo della cella | ``
 
 
@@ -74,7 +85,9 @@ Si può effettuare l'escape di:
 
 ## Elenco di attività
 `` - [x] Fatto ``
+
 `` - [ ] Da fare``
+
 `` - [ ] Da fare``
 
 ## Emoji
