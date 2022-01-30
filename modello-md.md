@@ -1,16 +1,11 @@
 # Appunti Markdown
 
 ## Titoli
-``# H1``
-
-``## H2``
-
-``### H3``
-
-``#### H4``
-
-``##### H5``
-
+``# H1``  
+``## H2``  
+``### H3``  
+``#### H4``  
+``##### H5``  
 ``###### H6``
 
 BP: mettere lo spazio dopo # e una riga vuota prima e dopo.
@@ -32,23 +27,20 @@ Per andare a capo meglio aggiungere due spazi alla fine della riga e poi andare 
 BP: mettere una riga vuota prima e dopo.
 
 ## Citazioni
-``> Citazione``
-
+``> Citazione``  
 ``>> Citazioni annidate``
 
 BP: mettere una riga vuota prima e dopo.
 
 ## Elenco ordinato
-``1. elemento``
-
-``2. elemento``
-
+``1. elemento``  
+``2. elemento``  
 ``3. elemento``
 
 ## Elenco non ordinato
-``- elemento``
-``- elemento``
-``- elemento``
+``- elemento``  
+``- elemento``  
+``- elemento``  
 
 ## Codice
 `codice`
@@ -71,25 +63,19 @@ Si può effettuare l'escape di:
 # Sintassi trattata da alcuni Markdown processor
 
 ## Tabella
-`` | Titolo della colonna | Titolo della colonna | ``
-
-`` | ----------- | ----------- | ``
-
-`` | Testo della cella | Testo della cella | ``
-
-`` | Testo della cella | Testo della cella | ``
+`` | Titolo della colonna | Titolo della colonna | ``  
+`` | ----------- | ----------- | ``  
+`` | Testo della cella | Testo della cella | ``  
+`` | Testo della cella | Testo della cella | ``  
 
 
 ## Nota a piè di pagina 	
 `` Frase con nota a piè di pagina. [^1] ``
 
 ## Elenco di attività
-`` - [x] Fatto ``
-
-`` - [ ] Da fare``
-
-`` - [ ] Da fare``
-
+`` - [x] Fatto ``  
+`` - [ ] Da fare``  
+`` - [ ] Da fare``  
 ## Emoji
 ``:joy: ``
 
