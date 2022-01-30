@@ -23,7 +23,7 @@ Per andare a capo meglio aggiungere due spazi alla fine della riga e poi andare 
 ``***Grassetto e corsivo***``
 
 ## Linea di separazione
-``---``
+``---``  
 BP: mettere una riga vuota prima e dopo.
 
 ## Citazioni
@@ -59,6 +59,8 @@ Come al solito --> \
 
 Si può effettuare l'escape di:
 `` \,`,*,_,{,},[,],<,>,(,),#,+,-,.,!,| ``
+
+---
 
 # Sintassi trattata da alcuni Markdown processor
 
