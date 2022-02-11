@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="utf-8">
+	<title>Flexbox</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<style type="text/css">
+
+/*
+	si definisce un elemento contenitore con display:flex;
+	--> tutti gli elementi contenuti diventano flex items
+	si definisce la direzione dell'asse principale (main axis) in base all'orientamento del flusso dei item ' +  larghezza  + ' figli con flex-direction: row/coloumn;
+	l'altro asse viene detto cross axis
+	wrap, si definisce se gli elementi che non ci stanno possono andare a capo con flex-wrap: wrap;
+	sintassi breve per flex-direction + flex-wrap
+	flex-flow: row wrap;
+	align-content: flex-start; --> cross-axis
+	justify-content: center; --> main-axis
+	align-items: flex-start; --> contenuto
+
+*/
+
+.flex-container {											display: flex;
+}
+
+.flex-direction-row  		  				{ 	flex-direction: row; 						}
+.flex-direction-col  	  					{ 	flex-direction: column; 				}
+.flex-direction-row-rev 					{ 	flex-direction: row-reverse; 		}
+.flex-direction-col-rev 					{ 	flex-direction: column-reverse; }
+
+.flex-wrap 												{ 	flex-wrap: wrap; 								}
+.flex-wrap-reverse 								{ 	flex-wrap: wrap-reverse; 				}
+
+.align-content-flex-start					{		align-content: flex-start; 			}
+.align-content-flex-end						{		align-content: flex-end; 				}
+.align-content-center							{		align-content: center; 					}
+.align-content-space-between			{		align-content: space-between; 	}
+.align-content-space-around				{		align-content: space-around; 		}
+.align-content-strecth						{		align-content: stretch; 				}
+
+.justify-content-flex-start				{		justify-content: flex-start; 		}
+.justify-content-flex-end					{		justify-content: flex-end; 			}
+.justify-content-center						{		justify-content: center; 				}
+.justify-content-space-between		{		justify-content: space-between; }
+.justify-content-space-around			{		justify-content: space-around; 	}
