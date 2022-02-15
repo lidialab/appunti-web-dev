@@ -1,15 +1,16 @@
 WSL2 running on W10
 MS Store
-Ubuntu 18.04 LTS
+Ubuntu 20.04 LTS
 
 ```
-sudo apt update
-sudo apt upgrade
+sudo apt update; sudo apt upgrade -y
 
-sudo apt-get install lamp-server^
+sudo apt-get install lamp-server^ -y
+sudo apt install ghostscript php php-bcmath php-curl php-imagick php-intl php-json php-mbstring php-xml php-zip -y
 
 sudo service apache2 start
 service apache2 status
+cd /var/www; sudo chmod 777 html
 
 ```
 check with a browser that apache is working: http:\\localhost
@@ -27,7 +28,8 @@ mysql_secure_installation
 sudo service mysql restart
 
 sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl -y
-sudo nano /etc/apache2/apache2.conf
+sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
+
 ```
 Include the following line at the bottom of the file, save and quit:
 ```
@@ -39,6 +41,7 @@ sudo service mysql restart
 
 sudo mysql -u root
 
+USE mysql;
 UPDATE user SET plugin='mysql_native_password' WHERE User='root';
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('root');
 
@@ -48,9 +51,7 @@ CREATE USER 'wordpress' IDENTIFIED BY 'password';
 GRANT ALL ON wordpress.* TO 'wordpress';
 FLUSH PRIVILEGES;
 
-sudo curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-sudo chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
+sudo curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; sudo chmod +x wp-cli.phar; sudo mv wp-cli.phar /usr/local/bin/wp
 
 cd /var/www/html/
 rm index.html
