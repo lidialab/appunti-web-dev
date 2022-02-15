@@ -5,6 +5,8 @@ Ubuntu 20.04 LTS
 ```
 sudo apt update; sudo apt upgrade -y
 
+sudo curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; sudo chmod +x wp-cli.phar; sudo mv wp-cli.phar /usr/local/bin/wp
+
 sudo apt-get install lamp-server^ -y
 sudo apt install ghostscript php php-bcmath php-curl php-imagick php-intl php-json php-mbstring php-xml php-zip php-gd php-mbstring phpmyadmin -y
 sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
@@ -18,18 +20,20 @@ cd /var/www; sudo chmod 777 html
 
 sudo mysql -u root -p
 
-USE mysql;
-UPDATE user SET plugin='mysql_native_password' WHERE User='root';
-#select user, host, plugin from user;
+  USE mysql;
+  UPDATE user SET plugin='mysql_native_password' WHERE user='root';
+  #select user, host, plugin from user;
 
-CREATE DATABASE wordpress;
-USE wordpress;
-CREATE USER 'wordpress' IDENTIFIED BY 'password';
-GRANT ALL ON wordpress.* TO 'wordpress';
-FLUSH PRIVILEGES;
-quit
+  CREATE DATABASE wordpress;
+  USE wordpress;
+  CREATE USER 'wordpress' IDENTIFIED BY 'password';
+  GRANT ALL ON wordpress.* TO 'wordpress';
+  FLUSH PRIVILEGES;
 
-sudo curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar; sudo chmod +x wp-cli.phar; sudo mv wp-cli.phar /usr/local/bin/wp
+  USE mysql;
+  #select user, host, plugin from user;
+
+  quit
 
 cd /var/www/html/
 rm index.html
