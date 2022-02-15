@@ -6,7 +6,8 @@ Ubuntu 20.04 LTS
 sudo apt update; sudo apt upgrade -y
 
 sudo apt-get install lamp-server^ -y
-sudo apt install ghostscript php php-bcmath php-curl php-imagick php-intl php-json php-mbstring php-xml php-zip -y
+sudo apt install ghostscript php php-bcmath php-curl php-imagick php-intl php-json php-mbstring php-xml php-zip php-gd php-mbstring phpmyadmin -y
+sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
 
 sudo service apache2 start
 service apache2 status
@@ -21,14 +22,8 @@ create a phpinfo.php file in /var/www/html with content:
 check with a browser that php is working: http:\\localhost\phpinfo.php
 ```
 sudo usermod -d /var/lib/mysql/ mysql #needed for WSL2 environment
-sudo service mysql start
-service mysql status
-
-mysql_secure_installation
 sudo service mysql restart
-
-sudo apt install phpmyadmin php-mbstring php-zip php-gd php-json php-curl -y
-sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
+sudo mysql_secure_installation
 
 ```
 Include the following line at the bottom of the file, save and quit:
