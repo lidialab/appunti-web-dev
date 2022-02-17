@@ -1,5 +1,5 @@
-# appunti-fullstack-web-dev
-Appunti per studiare da fullstack web developer
+# appunti-web-dev
+Appunti per studiare sviluppo web
 
 - HTTP
 - HTML
