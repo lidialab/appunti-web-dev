@@ -1,5 +1,5 @@
-# Windows
-## PuTTY
+# Connessione SSH a VM tramite coppia di chiavi
+## PuTTY (Windows)
 Crea la coppia di chiavi tramite PuTTYGen
 
 ### Chiave pubblica 
