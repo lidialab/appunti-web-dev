@@ -1,9 +1,15 @@
 # Windows
-PuTTY
-Crea la coppia di chiavi da PuTTYGen, carica in Pageant la chiave privata e nel server la chiave pubblica
-Nel server dalla propria home crea la cartella .ssh
-e poi 
+## PuTTY
+Crea la coppia di chiavi tramite PuTTYGen
+
+### Chiave pubblica 
+Copia la chiave pubblica nel server
+Per OpenSSH vai nella tua home e crea la cartella .ssh
+Crea il file authorized_keys
+Modifica il file authorized_keys accodando la chiave pubblica che hai copiato da PuTTYGen
 ```
-echo "..........." >> .ssh/authorized_keys
+echo "___chiave_pubblica___" >> .ssh/authorized_keys
 ```
-impostare la chiave nella sessione di PuTTY e modificare le opzioni di visualizzazione della finestra (dimensione carattere, ...)
+Imposta la chiave privata nella sessione di PuTTY di quella connessione alla voce Connection > SSH > Auth > Private key file for authentication
+Modifica a piacere le opzioni di visualizzazione della finestra (dimensione carattere, ...)
+Salva la sessione
