@@ -61,10 +61,13 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 ```
 ## phpMyAdmin
 scaricare e scompattare nella cartella phpmyadmin del park Valet così diventerà raggiungibile qui --> http://phpmyadmin.estensione
+rinominare config.sample.inc.php in config.inc.php e impostare i parametri desiderati
 se l'utente del database non ha password modificare nel file config.inc.php la linea:
 ```
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 ```
+
+
 ## WP CLI - Installare una nuova istanza di WordPress
 ```
 crea nuovo db wpkit
