@@ -1,19 +1,43 @@
 # Macchina Virtuale su VirtualBox
 Ubuntu Server LTS 64:
-2GB RAM - disco virtuale allocato dinamicamente (un po' più lento), VDI (VBox), 10GB - 2 CPU, enable PAE/NX ; 
-~Port forwarding~ non funziona, riprovare, per ora Bridge ; 
+4GB RAM - disco virtuale allocato dinamicamente (un po' più lento), VDI (VBox), 20GB - 1 CPU, enable PAE/NX ; 
+Rete per la VM impostare "con Bridge" ; 
 Cartella condivisa in auto-mount ; 
 No audio ; 
-SSH, autenticazione con chiavi cifrate
+SSH, autenticazione con coppia di chiavi cifrate
+
+## Installare Apache
 ```
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade -y
 sudo reboot
+sudo apt install apache2 -y
 ```
-installiamo sw mancante (nano, zip, unzip, curl, man-db, acpid, git,...) e quello necessario per le V.Box G.Additions (build-essential, virtualbox-dkms, module-assistant)
+Verifica se il firewall è attivo:
 ```
-sudo apt-get install -y build-essential virtualbox-dkms nano zip unzip curl man-db acpid git module-assistant gcc make perl
-sudo apt-get install sendmail-bin -y
+sudo ufw status
+```
+Se è attivo verifica le app che possono essere raggiunte
+```
+sudo ufw app list
+```
+ed eventualmente abilita la porta 80 per Apache
+```
+sudo ufw allow in "Apache"
+```
+## Installare MySQL
+```
+sudo apt install mysql-server -y
+```
+## Installare PHP
+```
+sudo apt install php libapache2-mod-php php-mysql -y
+```
+
+Installiamo sw mancante (nano, zip, unzip, curl, man-db, acpid, git,...) e quello necessario per le V.Box G.Additions (build-essential, virtualbox-dkms, module-assistant)
+```
+sudo apt install -y build-essential virtualbox-dkms nano zip unzip curl man-db acpid git module-assistant gcc make perl
+sudo apt install sendmail-bin -y
 sudo reboot
 sudo mkdir /media/cdrom
 sudo mount /dev/cdrom /media/cdrom
@@ -92,14 +116,14 @@ phpquery -v 7.2 -s apache2 -M
 sudo touch /var/log/php_errors.log
 sudo chown www-data: /var/log/php_errors.log
 
-sudo apt-get install php-mcrypt php-intl php-sqlite3 php-mbstring php-xml php-gd -y
+sudo apt install php-mcrypt php-intl php-sqlite3 php-mbstring php-xml php-gd -y
 sudo phpenmod mbstring simplexml
 
 /etc/apache2/apache2.conf
 ```
 # Mailcatcher
 ```
-sudo apt-get install libsqlite3-dev ruby-dev -y
+sudo apt install libsqlite3-dev ruby-dev -y
 sudo gem install mailcatcher
 sudoedit /lib/systemd/system/mailcatcher.service
 ```
@@ -169,8 +193,8 @@ flush privileges;
 # Troubleshooting
 Per correggere problemi Virtual Box Linux Additions provare:
 ```
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt update
+sudo apt upgrade -y
 sudo reboot
 sudo mount /dev/cdrom /media/cdrom
 sudo m-a prepare
