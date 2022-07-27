@@ -8,8 +8,7 @@ SSH, autenticazione con coppia di chiavi cifrate
 
 ## Installare Apache
 ```
-sudo apt update
-sudo apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 sudo reboot
 sudo apt install apache2 -y
 ```
