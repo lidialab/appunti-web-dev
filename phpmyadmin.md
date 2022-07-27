@@ -7,7 +7,7 @@
 Scaricare phpmyadmin e scompattarlo nella directory del localhost oppure eseguire:
 
 ```
-sudo apt install phpmyadmin
+sudo apt install phpmyadmin -y
 sudo ln -s /usr/share/phpmyadmin/ /var/www/html/phpmyadmin
 sudo service apache2 restart
 ```
