@@ -12,7 +12,7 @@ Crea il file authorized_keys
 Modifica il file authorized_keys accodando la chiave pubblica che hai copiato da PuTTYGen
 
 ```
-echo "___chiave_pubblica___" >> .ssh/authorized_keys
+echo "___ssh-rsa AAAABBBBBBBBBBBBBBBBCCCCCCCCCCCCCCCCCCCCCCDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEEEE___" >> .ssh/authorized_keys
 ```
 Imposta la chiave privata nella sessione di PuTTY di quella connessione alla voce Connection > SSH > Auth > Private key file for authentication
 
