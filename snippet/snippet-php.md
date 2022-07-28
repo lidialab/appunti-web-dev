@@ -1,7 +1,8 @@
 # Snippet PHP
-## money_format()
-is undefined in Windows, because Win hasn't strfmon capabilities;
-installare ..... php
+
+## money_format() in Windows
+
+Because Windows hasn't strfmon capabilities.
 
 ```php
 <?php
