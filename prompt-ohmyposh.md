@@ -1,9 +1,23 @@
-#
-## ohmyposh
+# Configurazione del prompt di invito con Oh My Posh
+
+## Progetto ohmyposh
 https://ohmyposh.dev/
+
 ### per Windows
 
-#### Powershell 7.2.1 (pwsh.exe)
+#### Installazione
+
+Nel sito https://ohmyposh.dev/ ci sono chiare istruzioni per l'installazione tramite WINGET (che ho utilizzato)
+
+```
+winget install JanDeDobbeleer.OhMyPosh -s winget
+```
+
+o tramite Windows Store (link nel sito di oh-my-posh) o ancora tramite metodo manuale da prompt di PowerShell.
+
+Viene raccomandato di utilizzare le shell tramite *Windows Terminal*.
+
+#### Configurazione per Powershell 7.2.5 (pwsh.exe)
 
 File del profilo di Powershell ($Home\Documents\PowerShell\Microsoft.PowerShell_profile.ps1)
 ```
@@ -109,31 +123,40 @@ Tema (es: lltheme.omp.json)
 
 ```
 
-#### Powershell 5.1 (powershell.exe)
-Ho dovuto cambiare la seguente policy, devo cercare se si può fare diversamente.
-```
-Set-ExecutionPolicy RemoteSigned
+Nelle impostazioni di Windows terminal impostare un font adatto a visualizzare le icone per PowerShell 7.2.5.
 
-Install-Module -Name oh-my-posh -Scope CurrentUser
+
+#### Configurazione per Powershell 5.1 (powershell.exe)
+
+Da PS lanciata in modalità amministratore, ho cambiato la seguente policy:
+```
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser
 ```
 File del profilo di Powershell 5.1 ($Home\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1)
 ```
-Import-Module oh-my-posh
 oh-my-posh --init --shell pwsh --config ~/lltheme.omp.json | Invoke-Expression
 ```
 
-#### WSL2 Debian
-Installare ph-my-posh
+Nelle impostazioni di Windows terminal impostare un font adatto a visualizzare le icone per PowerShell 5.1.
+
+#### Configurazione per WSL2 Debian
+
+##### Installare oh-my-posh
+
 ```
 sudo wget https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64 -O /usr/local/bin/oh-my-posh
 ```
+
 modificare il file .bashrc
+
 ```
 sudo nano /home/lidia/.bashrc
 ```
+
 ATTENZIONE modificare SOLO da wsl, NON da Windows, rif: https://devblogs.microsoft.com/commandline/do-not-change-linux-files-using-windows-apps-and-tools/
 
-Installare i font powerline (o quelli utilizzati)
+Installare i font powerline (o quelli utilizzati):
+
 ```
-sudo apt-get install fonts-powerline
+sudo apt install fonts-powerline -y
 ```

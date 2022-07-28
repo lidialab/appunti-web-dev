@@ -1,12 +1,19 @@
 # appunti-web-dev
 Appunti per studiare sviluppo web
 
-- HTTP
-- HTML
-- CSS
-- JS
-- DOM
-- BOM
-- PHP
-- MySQL
-- UX
+Cartelle:
+
+appunti
+- linguaggi di programmazione
+
+comandi
+- comandi per varie shell
+
+setup
+- installazioni o impostazioni
+
+snippet
+- pezzi di codice
+
+template
+- modelli completi
