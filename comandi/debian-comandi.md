@@ -1,6 +1,7 @@
 # Comandi base
 ## Determinare S.O. e versione
 ```cat /etc/issue```
+
 ```cat /etc/*-release```
 
 # Gestione dei pacchetti
