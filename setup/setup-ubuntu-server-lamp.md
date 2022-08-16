@@ -12,6 +12,8 @@ sudo apt install apache2 -y
 sudo service apache2 status
 # se non è attivo farlo partire con:
 # sudo service apache2 start
+# o
+# sudo systemctl start apache2.service
 ```
 
 ### Verificare se il firewall è attivo:
@@ -31,6 +33,8 @@ sudo ufw allow https
 ### Verificare i file di configurazione di Apache
 ```
 apachectl configtest
+# oppure
+apache2ctl -t
 ```
 
 Se l'esito riporta messaggi diversi da "Syntax OK" risolvere.
@@ -59,7 +63,7 @@ sudo systemctl reload apache2
 sudo apt install mysql-server -y
 ```
 
-## Utilizzare utente root con passsword (ambiente di test)
+## Utilizzare utente root con password (ambiente di test)
 ```
 sudo mysql
 select user, host, authentication_string from mysql.user;
@@ -84,61 +88,12 @@ sudo nano /var/www/html/test/info.php
 ```
 
 ## Installare phpMyAdmin
-```
-sudo apt install phpmyadmin -y
-```
 
-Configuration step post install:
-
-apache2
-phpmyadmin
-myadmin
-
-
-sudo cp /etc/phpmyadmin/apache.conf /etc/apache2/conf-enabled/
-sudo cp /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
-
-sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf 
-sudo a2enconf phpmyadmin.conf
-----------------------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------------------
-
-oppure Scaricare phpmyadmin e scompattarlo in una sottocartella di www
-
-### Utente phpmyadmin
-Entrare nella console mysql e creare un utente ad hoc per phpmyadmin
-```
-CREATE USER 'master'@'%' IDENTIFIED BY 'master';
-GRANT ALL PRIVILEGES ON *.* TO 'master'@'%' WITH GRANT OPTION;
-flush privileges;
-```
-
-# Configurare MySQL
-```
-sudoedit /etc/mysql.conf
-```
-File mysql.conf
-```
-!includedir /etc/mysql/conf.d/
-!includedir /etc/mysql/mysql.conf.d/
-
-[mysqld]
-collation-server = utf8_unicode_ci
-character-set-server = utf8
-bind-address = 0.0.0.0
-slow_query_log = 1
-slow_query_log_file = /var/log/mysql/slow.log
-long_query_time = 2
-```
-Riavviamo MySQL
-```
-sudo service mysql restart
-sudo chgrp adm /var/log/mysql/slow.log
-```
+Scaricare phpmyadmin e scompattarlo in una sottocartella di www
 
 # Mailcatcher
 ```
-sudo apt install libsqlite3-dev ruby-dev -y
+sudo apt install libsqlite3-dev ruby-dev gcc make -y
 sudo gem install mailcatcher
 sudoedit /lib/systemd/system/mailcatcher.service
 ```
@@ -172,6 +127,48 @@ sudo phpenmod mailcatcher
 sudo service apache2 start
 ```
 Mailcatcher raggiungibile a: http://nomeserver.mydev:1080/
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+### Utente phpmyadmin
+Entrare nella console mysql e creare un utente ad hoc per phpmyadmin
+```
+CREATE USER 'master'@'%' IDENTIFIED BY 'master';
+GRANT ALL PRIVILEGES ON *.* TO 'master'@'%' WITH GRANT OPTION;
+flush privileges;
+```
+
+# Configurare MySQL
+```
+sudoedit /etc/mysql.conf
+```
+File mysql.conf
+```
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mysql.conf.d/
+
+[mysqld]
+collation-server = utf8_unicode_ci
+character-set-server = utf8
+bind-address = 0.0.0.0
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 2
+```
+Riavviamo MySQL
+```
+sudo service mysql restart
+sudo chgrp adm /var/log/mysql/slow.log
+```
+
+
 
 
 
