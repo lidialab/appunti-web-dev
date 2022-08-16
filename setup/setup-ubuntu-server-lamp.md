@@ -28,6 +28,32 @@ sudo ufw allow http
 sudo ufw allow https
 ```
 
+### Verificare i file di configurazione di Apache
+```
+apachectl configtest
+```
+
+Se l'esito riporta messaggi diversi da "Syntax OK" risolvere.
+
+Per "AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1. Set the 'ServerName' directive globally to suppress this message"
+
+Aggiungere la direttiva globale al file "apache2.conf"
+```
+sudo nano /etc/apache2/apache2.conf
+```
+
+in una delle seguenti forme:
+```
+ServerName "myserver.ext"
+ServerName "IP_del_SERVER"
+```
+Ricontrollare con ```apachectl configtest```
+
+Riavviare Apache
+```
+sudo systemctl reload apache2
+```
+
 ## Installare MySQL
 ```
 sudo apt install mysql-server -y
@@ -36,7 +62,10 @@ sudo apt install mysql-server -y
 ## Installare PHP
 ```
 sudo apt install php libapache2-mod-php php-mysql -y
+```
 
+### Verificare il funzionamento di PHP in Apache
+```
 sudo mkdir /var/www/html/test
 sudo nano /var/www/html/test/info.php
 # contenuto del file info.php
