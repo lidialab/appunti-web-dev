@@ -59,6 +59,17 @@ sudo systemctl reload apache2
 sudo apt install mysql-server -y
 ```
 
+## Utilizzare utente root con passsword (ambiente di test)
+```
+sudo mysql
+select user, host, authentication_string from mysql.user;
+alter user root@localhost identified with mysql_native_password by 'root';
+flush privileges;
+exit
+```
+Per testare se funziona accedere con ```mysql -u root -p``` inserisci la password, se entri è ok (poi ```exit``` per uscire).
+
+
 ## Installare PHP
 ```
 sudo apt install php libapache2-mod-php php-mysql -y
@@ -77,6 +88,19 @@ sudo nano /var/www/html/test/info.php
 sudo apt install phpmyadmin -y
 ```
 
+Configuration step post install:
+
+apache2
+phpmyadmin
+myadmin
+
+
+sudo cp /etc/phpmyadmin/apache.conf /etc/apache2/conf-enabled/
+sudo cp /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf 
+sudo a2enconf phpmyadmin.conf
+----------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------
 
 oppure Scaricare phpmyadmin e scompattarlo in una sottocartella di www
