@@ -1,18 +1,20 @@
 # Macchina Virtuale su VirtualBox
-Ubuntu Server LTS 64:
-4GB RAM - disco virtuale allocato dinamicamente (un po' più lento), VDI (VBox), 20GB - 1 CPU, enable PAE/NX ; 
-Rete per la VM impostare "con Bridge" ; 
-Cartella condivisa in auto-mount ; 
-No audio ; 
-SSH, autenticazione con coppia di chiavi cifrate
+Ubuntu Server 22.04.1 LTS 64:
+4GB RAM - disco virtuale allocato dinamicamente (un po' più lento), VDI (VBox), 30GB - 2 CPU, rete con Bridge. 
+
 
 ## Installare Apache
+
 ```
 sudo apt update && sudo apt upgrade -y
 sudo reboot
 sudo apt install apache2 -y
+sudo service apache2 status
+# se non è attivo farlo partire con:
+# sudo service apache2 start
 ```
-Verifica se il firewall è attivo:
+
+### Verificare se il firewall è attivo:
 ```
 sudo ufw status
 ```
@@ -20,18 +22,110 @@ Se è attivo verifica le app che possono essere raggiunte
 ```
 sudo ufw app list
 ```
-ed eventualmente abilita la porta 80 per Apache
+ed eventualmente abilita le porte 80 e 443 (ambiente di test)
 ```
-sudo ufw allow in "Apache"
+sudo ufw allow http
+sudo ufw allow https
 ```
+
 ## Installare MySQL
 ```
 sudo apt install mysql-server -y
 ```
+
 ## Installare PHP
 ```
 sudo apt install php libapache2-mod-php php-mysql -y
+
+sudo mkdir /var/www/html/test
+sudo nano /var/www/html/test/info.php
+# contenuto del file info.php
+<?php phpinfo() ?>
 ```
+
+## Installare phpMyAdmin
+```
+sudo apt install phpmyadmin -y
+```
+
+----------------------------------------------------------------------------------------------------------------
+
+oppure Scaricare phpmyadmin e scompattarlo in una sottocartella di www
+
+### Utente phpmyadmin
+Entrare nella console mysql e creare un utente ad hoc per phpmyadmin
+```
+CREATE USER 'master'@'%' IDENTIFIED BY 'master';
+GRANT ALL PRIVILEGES ON *.* TO 'master'@'%' WITH GRANT OPTION;
+flush privileges;
+```
+
+# Configurare MySQL
+```
+sudoedit /etc/mysql.conf
+```
+File mysql.conf
+```
+!includedir /etc/mysql/conf.d/
+!includedir /etc/mysql/mysql.conf.d/
+
+[mysqld]
+collation-server = utf8_unicode_ci
+character-set-server = utf8
+bind-address = 0.0.0.0
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 2
+```
+Riavviamo MySQL
+```
+sudo service mysql restart
+sudo chgrp adm /var/log/mysql/slow.log
+```
+
+# Mailcatcher
+```
+sudo apt install libsqlite3-dev ruby-dev -y
+sudo gem install mailcatcher
+sudoedit /lib/systemd/system/mailcatcher.service
+```
+File mailcatcher.service:
+```
+[Unit]
+Description=MailCatcher Service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/mailcatcher --foreground --ip 0.0.0.0
+
+[Install]
+WantedBy=multi-user.target
+```
+Lo avviamo e impostiamo che parta in automatico ad ogni reboot
+```
+sudo service mailcatcher start
+sudo systemctl enable mailcatcher.service
+
+sudoedit /etc/php/7.2/mods-available/mailcatcher.ini
+```
+File mailcatcher.ini:
+```
+sendmail_path = /usr/local/bin/catchmail
+sendmail_from = mailcatcher@nomeserver.mydev
+```
+Avviamo mailcatcher
+```
+sudo phpenmod mailcatcher
+sudo service apache2 start
+```
+Mailcatcher raggiungibile a: http://nomeserver.mydev:1080/
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+VIRTUAL BOX:
+
+
 
 Installiamo sw mancante (nano, zip, unzip, curl, man-db, acpid, git,...) e quello necessario per le V.Box G.Additions (build-essential, virtualbox-dkms, module-assistant)
 ```
@@ -120,74 +214,8 @@ sudo phpenmod mbstring simplexml
 
 /etc/apache2/apache2.conf
 ```
-# Mailcatcher
-```
-sudo apt install libsqlite3-dev ruby-dev -y
-sudo gem install mailcatcher
-sudoedit /lib/systemd/system/mailcatcher.service
-```
-File mailcatcher.service:
-```
-[Unit]
-Description=MailCatcher Service
 
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/mailcatcher --foreground --ip 0.0.0.0
 
-[Install]
-WantedBy=multi-user.target
-```
-Lo avviamo e impostiamo che parta in automatico ad ogni reboot
-```
-sudo service mailcatcher start
-sudo systemctl enable mailcatcher.service
-
-sudoedit /etc/php/7.2/mods-available/mailcatcher.ini
-```
-File mailcatcher.ini:
-```
-sendmail_path = /usr/local/bin/catchmail
-sendmail_from = mailcatcher@nomeserver.mydev
-```
-Avviamo mailcatcher
-```
-sudo phpenmod mailcatcher
-sudo service apache2 start
-```
-Mailcatcher raggiungibile a: http://nomeserver.mydev:1080/
-
-# MySQL
-```
-sudoedit /etc/mysql.conf
-```
-File mysql.conf
-```
-!includedir /etc/mysql/conf.d/
-!includedir /etc/mysql/mysql.conf.d/
-
-[mysqld]
-collation-server = utf8_unicode_ci
-character-set-server = utf8
-bind-address = 0.0.0.0
-slow_query_log = 1
-slow_query_log_file = /var/log/mysql/slow.log
-long_query_time = 2
-```
-Riavviamo MySQL
-```
-sudo service mysql restart
-sudo chgrp adm /var/log/mysql/slow.log
-```
-# phpmyadmin
-Scaricare phpmyadmin e scompattarlo
-
-Entrare nella console mysql e creare un utente ad hoc per phpmyadmin
-```
-CREATE USER 'master'@'%' IDENTIFIED BY 'master';
-GRANT ALL PRIVILEGES ON *.* TO 'master'@'%' WITH GRANT OPTION;
-flush privileges;
-```
 
 # Troubleshooting
 Per correggere problemi Virtual Box Linux Additions provare:
