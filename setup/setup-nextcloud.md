@@ -7,3 +7,8 @@ Verificare la presenza di tutti i moduli php obbligatori.
 
 Scaricare lo script php di inizializzazione https://download.nextcloud.com/server/installer/setup-nextcloud.php
 
+php.ini
+```
+post_max_size = 1024M
+upload_max_filesize = 1024M
+```
