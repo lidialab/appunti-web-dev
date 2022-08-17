@@ -16,8 +16,11 @@ sudo reboot
 sudo apt install apache2 mariadb-server php libapache2-mod-php php-mysql -y
 sudo mysql_secure_installation
 apache2ctl -t
-sudo nano /etc/apache2/apache2.conf
-# aggiunto ServerName
+sudo nano /etc/apache2/apache2.conf     # aggiunto ServerName
+sudo apt install phpmyadmin -y
+
+sudoedit /etc/mysql/mariadb.cnf         # aggiungere in coda
+bind-address = 0.0.0.0                  # la seguente riga per connettersi da GUI esterna
 ```
 
 
