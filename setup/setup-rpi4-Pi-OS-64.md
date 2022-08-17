@@ -36,7 +36,24 @@ flush privileges;
 
 ## NextCloud
 ```
+sudo mkdir /var/www/html/nextcloud
+cd nextcloud/
+sudo wget https://download.nextcloud.com/server/installer/setup-nextcloud.php
+sudo chgrp -R www-data /var/www/html/nextcloud/
+sudo chown -R www-data /var/www/html/nextcloud/
+cd /etc/apache2/sites-available/
+sudo cp 000-default.conf 001-nextcloud.conf
+sudoedit 001-nextcloud.conf
 
+<VirtualHost *:80>
+  ServerName tuonomeservizio.tuoserver
+  ServerAlias www.tuonomeservizio.tuoserver
+  DocumentRoot "/var/www/html/nextcloud"
+</VirtualHost>
+
+sudo a2ensite 001-nextcloud.conf
+sudo a2enmod rewrite
+sudo systemctl reload apache2
 ```
 
 
