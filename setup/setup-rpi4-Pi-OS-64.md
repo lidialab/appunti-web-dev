@@ -36,8 +36,7 @@ flush privileges;
 
 ## NextCloud
 ```
-sudo apt install snapd
-sudo snap install nextcloud
+
 ```
 
 
