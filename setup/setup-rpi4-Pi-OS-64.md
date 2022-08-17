@@ -56,7 +56,11 @@ sudo a2enmod rewrite
 sudo systemctl reload apache2
 ```
 
-
+php.ini
+```
+post_max_size = 1024M
+upload_max_filesize = 1024M
+```
 
 
 
