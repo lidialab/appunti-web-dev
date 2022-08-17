@@ -5,6 +5,8 @@ Cartelle:
 
 appunti
 - linguaggi di programmazione
+- software
+- ...
 
 comandi
 - comandi per varie shell
