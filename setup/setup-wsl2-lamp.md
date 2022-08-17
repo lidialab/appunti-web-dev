@@ -1,4 +1,22 @@
-WSL2 running on W10
+WSL2 running on W11 pro
+MS Store
+Debian 11 (bullseye)
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install apache2 mariadb-server php libapache2-mod-php php-mysql -y
+sudo service mariadb start
+sudo service apache2 restart
+sudo mysql_secure_installation
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------
+WSL2 running on W10 pro
 MS Store
 Ubuntu 20.04 LTS
 
