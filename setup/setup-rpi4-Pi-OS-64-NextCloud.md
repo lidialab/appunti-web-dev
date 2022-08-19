@@ -1,13 +1,5 @@
 # Raspberry Pi OS 64 bit - port of Debian Bullseye
 
-Con i seguenti parametri preimpostati (utilizzando Raspberry Pi Imager):
-- Hostname
-- Password di pi
-- SSH abilitato
-- Time zone di Roma
-- keyboard layout IT
-- Telemetria disabilitata
-
 ## Post avvio
 
 ```
@@ -49,43 +41,110 @@ Creare un nuovo utente MariaDB e dare i privilegi di accesso anche da fuori loca
 
 ```
 sudo mariadb
-CREATE DATABASE nextcloud;
-CREATE USER 'user';
-GRANT ALL PRIVILEGES ON database.* TO 'user'@'type_of_access' IDENTIFIED BY 'password' WITH GRANT OPTION;
+CREATE DATABASE nome_database;
+CREATE USER 'nome_utente';
+GRANT ALL PRIVILEGES ON database.* TO 'nome_utente'@'accesso' IDENTIFIED BY 'password' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
-EXIT
+exit
 ```
 
 ## NextCloud
 ```
-sudo mkdir /var/www/html/nextcloud
-cd nextcloud/
-sudo wget https://download.nextcloud.com/server/installer/setup-nextcloud.php
-sudo chgrp -R www-data /var/www/html/nextcloud/
-sudo chown -R www-data /var/www/html/nextcloud/
+cd /var/www/html/
+sudo wget https://download.nextcloud.com/server/releases/latest-xx.zip
+sudo unzip latest-xx.zip
+sudo chown -R www-data:www-data /var/www/html/nextcloud/
+
 cd /etc/apache2/sites-available/
-sudo cp 000-default.conf 001-nextcloud.conf
-sudoedit 001-nextcloud.conf
+sudoedit nextcloud.conf
 
 <VirtualHost *:80>
-  ServerName tuonomeservizio.tuoserver
-  ServerAlias www.tuonomeservizio.tuoserver
-  DocumentRoot "/var/www/html/nextcloud"
+     DocumentRoot "/var/www/html/nextcloud"
+     ServerName nextcloud
+
+     <Directory "/var/www/html/nextcloud/">
+         Options MultiViews FollowSymlinks
+         AllowOverride All
+         Order allow,deny
+         Allow from all
+    </Directory>
+
+    TransferLog /var/log/apache2/nextcloud_access.log
+    ErrorLog /var/log/apache2/nextcloud_error.log
 </VirtualHost>
 
-sudo a2ensite 001-nextcloud.conf
-sudo a2enmod rewrite
-sudo systemctl reload apache2
+sudo a2ensite nextcloud.conf
+[*]sudo a2dissite 000-default.conf
+apache2ctl -t
+sudo systemctl restart apache2
 ```
 
-php.ini
+sudoedit /etc/php/x.x/apache2/php.ini
+
 ```
 post_max_size = 1024M
 upload_max_filesize = 1024M
+memory_limit = 512M
+max_execution_time = 360
+date.timezone = Europe/Rome
+opcache.enable=1
+opcache.interned_strings_buffer=8
+opcache.max_accelerated_files=10000
+opcache.memory_consumption=128
+opcache.save_comments=1
+opcache.revalidate_freq=1
+ 
 ```
 
+Riavviare A2 (prima fai un check)
 
+```
+apache2ctl -t
+sudo systemctl restart apache2
+```
 
+Verificare la presenza dei seguenti moduli php
+
+```
+php -m | grep -i filter;
+php -m | grep -i hash;
+php -m | grep -i libxml;
+php -m | grep -i openssl;
+php -m | grep -i pcntl;
+php -m | grep -i pdo_mysql;
+php -m | grep -i session;
+php -m | grep -i zlib;
+```
+
+Se necessario installare e attivare i seguenti moduli php
+
+```
+sudo apt -y install php-apcu;
+sudo apt -y install php-bcmath;
+sudo apt -y install php-bz2;
+sudo apt -y install php-ctype;
+sudo apt -y install php-curl;
+sudo apt -y install php-dom;
+sudo apt -y install php-exif;
+sudo apt -y install php-fileinfo;
+sudo apt -y install php-ftp;
+sudo apt -y install php-gd;
+sudo apt -y install php-gmp;
+sudo apt -y install php-iconv;
+sudo apt -y install php-imagick;
+sudo apt -y install php-imap;
+sudo apt -y install php-intl;
+sudo apt -y install php-json;
+sudo apt -y install php-mbstring;
+sudo apt -y install php-memcached;
+sudo apt -y install php-phar;
+sudo apt -y install php-posix;
+sudo apt -y install php-redis;
+sudo apt -y install php-simplexml;
+sudo apt -y install php-xmlreader;
+sudo apt -y install php-xmlwriter;
+sudo apt -y install php-zip;
+```
 
 ## Verificare e/o disabilitare ssh per l'utente root
 
