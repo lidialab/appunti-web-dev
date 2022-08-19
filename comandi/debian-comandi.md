@@ -69,3 +69,6 @@ Molti dei comandi seguenti vanno eseguiti con privilegi amministrativi, utilizza
 
 ### Cercare software
 ```dpkg -l | grep apache```
+
+## Permessi file e directory
+sudo chown -R www-data:www-data /var/www/html/nome_cartella/
