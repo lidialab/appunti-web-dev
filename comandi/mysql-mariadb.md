@@ -1,0 +1,2 @@
+
+GRANT ALL PRIVILEGES ON *.* TO '***'@'*************' IDENTIFIED BY '*****' WITH GRANT OPTION;
