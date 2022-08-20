@@ -102,6 +102,7 @@ Riavviare A2 (prima fai un check)
 apache2ctl -t
 sudo systemctl restart apache2
 ```
+
 Abilitare la memoria cache
 
 ```
@@ -109,7 +110,6 @@ sudoedit /var/www/html/nextcloud/config/config.php
 
 'memcache.local' => '\OC\Memcache\APCu',
 ```
- 
 
 Verificare la presenza dei seguenti moduli php
 
@@ -161,7 +161,6 @@ sudo apt -y install php-zip;
 [*] sudo a2enmod ssl
 sudo mkdir -p /etc/apache2/ssl
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
-[*] sudo a2enmod ssl
 sudoedit /etc/apache2/sites-available/default-ssl.conf
 
 <VirtualHost *:443>
@@ -169,8 +168,8 @@ sudoedit /etc/apache2/sites-available/default-ssl.conf
    DocumentRoot /var/www/your_domain_or_ip
 
    SSLEngine on
-   SSLCertificateFile /etc/ssl/certs/apache.crt
-   SSLCertificateKeyFile /etc/ssl/private/apache.key
+   SSLCertificateFile /etc/apache2/ssl/apache.crt
+   SSLCertificateKeyFile /etc/apache2/ssl/apache.key
 </VirtualHost>
 
 <VirtualHost *:80>
