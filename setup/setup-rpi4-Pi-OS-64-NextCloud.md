@@ -3,6 +3,7 @@
 ## Post avvio
 
 ```
+sudo raspi-config           # per modificare servizi (disponibile con la distro ufficiale Raspberry Pi OS)
 sudo apt update && sudo apt upgrade -y
 sudo apt dist-upgrade
 sudo apt autoremove
