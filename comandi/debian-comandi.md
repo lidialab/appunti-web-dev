@@ -19,6 +19,52 @@ Riferimenti per directory speciali
 ~       # home directory
 ```
 
+## Creare un nuovo utente e aggiungerlo a un gruppo
+
+```
+sudo adduser athena
+sudo adduser athena sudo
+sudo adduser athena www-data
+```
+
+## Creare un nuovo gruppo
+
+```
+sudo addgroup athenacrew
+
+```
+
+## Utenti
+
+### Crisi esistenziale (qual è il mio utente?)
+
+```
+whoami
+```
+
+### Crisi sociale (Elenco degli utenti)
+
+```
+cat /etc/passwd
+```
+Output:
+
+```
+[...]
+athena:x:1001:1001:Athena,,,:/home/athena:/bin/bash
+[...]
+```
+nome utente, password "nascosta", id utente (uid), id gruppo (gid), Nome completo, indirizzo, indirizzo, home directory, shell
+
+### Cambiare password
+
+```passwd athena```
+
+### Switch user
+``` su - minerva```
+
+
+
 ## Determinare S.O. e versione
 ```cat /etc/issue```
 
