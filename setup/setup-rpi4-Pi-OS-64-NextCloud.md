@@ -182,3 +182,41 @@ sudo a2ensite default-ssl.conf
 apache2ctl -t
 sudo systemctl restart apache2
 ```
+
+## Altro sito
+```
+cd /etc/apache2/sites-available
+
+sudoedit nome_sito.conf
+
+<IfModule mod_ssl.c>
+        <VirtualHost _default_:443>
+                ServerAdmin webmaster@localhost
+                ServerName wpkit.nextrp
+                ServerAlias www.wpkit.nextrp
+                DocumentRoot /var/www/html/wpkit
+
+
+                SSLEngine on
+
+                SSLCertificateFile /etc/apache2/ssl/apache.crt
+                SSLCertificateKeyFile /etc/apache2/ssl/apache.key
+
+                <FilesMatch "\.(cgi|shtml|phtml|php)$">
+                                SSLOptions +StdEnvVars
+                </FilesMatch>
+                <Directory /usr/lib/cgi-bin>
+                                SSLOptions +StdEnvVars
+                </Directory>
+                
+                TransferLog /var/log/apache2/wpkit_access.log
+                ErrorLog /var/log/apache2/wpkit_error.log
+                
+        </VirtualHost>
+</IfModule>
+<VirtualHost *:80>
+        ServerName wpkit.nextrp
+        ServerAlias www.wpkit.nextrp
+        Redirect http://wpkit.nextrp/ https://wpkit.nextrp/
+</VirtualHost>
+```
