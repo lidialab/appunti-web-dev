@@ -1,4 +1,24 @@
 # Comandi base
+
+## Navigare tra le directory
+
+``` 
+pwd         # print working directory
+ls          # list directory
+cd          # change directory
+
+
+```
+
+Riferimenti per directory speciali
+
+```
+/       # directory radice
+.       # directory corrente
+..      # directory superiore
+~       # home directory
+```
+
 ## Determinare S.O. e versione
 ```cat /etc/issue```
 
