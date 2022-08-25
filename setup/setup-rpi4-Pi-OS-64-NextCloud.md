@@ -49,6 +49,7 @@ exit
 ```
 
 ## NextCloud
+https://docs.nextcloud.com/server/latest/admin_manual/installation/source_installation.html
 ```
 cd /var/www/html/
 sudo wget https://download.nextcloud.com/server/releases/latest-xx.zip
