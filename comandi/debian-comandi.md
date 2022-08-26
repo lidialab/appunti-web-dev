@@ -1,13 +1,13 @@
 # Comandi base
 
-## Navigare tra le directory
+## Directory
+
+### Navigare tra le directory
 
 ``` 
 pwd         # print working directory
 ls          # list directory
 cd          # change directory
-
-
 ```
 
 Riferimenti per directory speciali
@@ -19,22 +19,15 @@ Riferimenti per directory speciali
 ~       # home directory
 ```
 
-## Creare un nuovo utente e aggiungerlo a un gruppo
+## Utenti
+
+### Creare un nuovo utente e aggiungerlo a un gruppo
 
 ```
 sudo adduser athena
 sudo adduser athena sudo
 sudo adduser athena www-data
 ```
-
-## Creare un nuovo gruppo
-
-```
-sudo addgroup athenacrew
-
-```
-
-## Utenti
 
 ### Crisi esistenziale (qual è il mio utente?)
 
@@ -63,7 +56,41 @@ nome utente, password "nascosta", id utente (uid), id gruppo (gid), Nome complet
 ### Switch user
 ``` su - minerva```
 
+### Sudoers
 
+Editare il file dei sudoers.
+
+```sudo visudo```
+
+## Gruppi
+
+## Creare un nuovo gruppo
+
+```
+sudo addgroup athenacrew
+```
+
+## Aggiungere un utente a un gruppo
+
+```
+sudo usermod -aG athenacrew athena
+```
+
+## Togliere un utente da un gruppo
+
+```
+sudo gpasswd -d athena athenacrew
+```
+
+## Eliminare un gruppo
+
+```
+sudo groupdel athenacrew
+```
+
+### Crisi di gruppo (Elenco dei gruppi)
+
+```cat /etc/groupfile```
 
 ## Determinare S.O. e versione
 ```cat /etc/issue```
@@ -99,6 +126,7 @@ e molti altri parametri.
 Package source : fonte del pacchetto, repository
 
 Source package : pacchetto col codice sorgente
+
 
 ## Commando apt
 
@@ -138,3 +166,55 @@ Molti dei comandi seguenti vanno eseguiti con privilegi amministrativi, utilizza
 
 ## Permessi file e directory
 sudo chown -R www-data:www-data /var/www/html/nome_cartella/
+
+## File system
+
+/ root directory
+| -- bin (binaries , programs)
+|
+| -- boot (file di boot)
+|
+| -- dev (device, harddisk, ...)
+|
+| -- etc (etsy file, configurazioni, ...)
+|
+| -- home (directory utenti)
+|
+| -- lib (librerie)
+|
+| -- media (drive montati automaticamente)
+|
+| -- mnt (drive montati manualmente)
+|
+| -- root (home di root)
+|
+| -- sbin (special binaries)
+|
+| -- tmp (file temporanei)
+|
+| -- usr
+| -- -- usr/bin
+| -- -- usr/sbin
+|
+| -- var  (logs, ...)
+
+
+## Utility
+
+### cp
+Copiare file
+
+### rm
+Eliminare file
+
+### cat
+Visualizzatore del contenuto di un file
+
+### sudo
+Eseguire un comando da root
+
+### which
+Quale binario viene eseguito
+
+
+
