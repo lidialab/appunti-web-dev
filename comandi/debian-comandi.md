@@ -1,5 +1,20 @@
 # Comandi base
 
+## Help
+```help```
+```info```
+```man```
+```apropos```
+
+```comando -h```
+```comando --h```
+```comando --help```
+
+
+## ps
+quali processi sono in esecuzione? (tra cui la shell)
+
+
 ## Directory
 
 ### Navigare tra le directory
@@ -35,6 +50,11 @@ sudo adduser athena www-data
 whoami
 ```
 
+```
+id
+```
+
+
 ### Crisi sociale (Elenco degli utenti)
 
 ```
@@ -62,27 +82,30 @@ Editare il file dei sudoers.
 
 ```sudo visudo```
 
+### Chi è collegato
+```who```
+
 ## Gruppi
 
-## Creare un nuovo gruppo
+### Creare un nuovo gruppo
 
 ```
 sudo addgroup athenacrew
 ```
 
-## Aggiungere un utente a un gruppo
+### Aggiungere un utente a un gruppo
 
 ```
 sudo usermod -aG athenacrew athena
 ```
 
-## Togliere un utente da un gruppo
+### Togliere un utente da un gruppo
 
 ```
 sudo gpasswd -d athena athenacrew
 ```
 
-## Eliminare un gruppo
+### Eliminare un gruppo
 
 ```
 sudo groupdel athenacrew
@@ -96,6 +119,16 @@ sudo groupdel athenacrew
 ```cat /etc/issue```
 
 ```cat /etc/*-release```
+
+## Determinare hostname
+```hostname```
+
+## Determinare cose
+```uname```
+```ip```
+```ss```
+```netstat```
+```env```
 
 # Gestione dei pacchetti
 ## APT - Advanced Package Tool
@@ -217,4 +250,128 @@ Eseguire un comando da root
 Quale binario viene eseguito
 
 
+
+## shell
+shell in uso:
+```
+echo $0
+```
+
+percorso della shell in uso:
+```
+echo $SHELL
+```
+
+modificare la shell in uso al login dal file /etc/passwd:
+```
+nomeutente:x:1001:1001::/home/nomeutente:/bin/nomeshell
+```
+
+## Gestione pacchetti Debian
+
+## dpkg
+
+## apt ~ apt-get
+
+Con Debian Jessie è stato introdotto apt che unisce funzionalità di apt-get e apt-cache e ha migliorato l'output a favore dell'utente. Per casi complessi sarà preferibile utilizzare apt-get. 
+
+```
+apt search stringa
+sudo apt install nome_pacchetto
+sudo apt remove nome_pacchetto
+sudo apt update
+sudo apt upgrade
+
+apt full-upgrade
+apt autoremove
+apt list -a nome_pacchetto
+apt show nome_pacchetto
+apt show -a nome_pacchetto
+```
+
+## Accesso remoto
+```
+sudo apt install ssh
+```
+È poi consigliato creare una coppia di chiavi crittografata per accedere in alternativa alla coppia user-password
+
+## Fonti
+[Debian reference](https://www.debian.org/doc/manuals/debian-reference/)
+[The Debian Administrator's Handbook - Debian Jessie (8) from Discovery to Mastery](https://www.debian.org/doc/manuals/debian-handbook/index.en.html)
+[D.3.7. Accesso remoto: installazione di SSH e impostazione dell'accesso](https://www.debian.org/releases/stable/amd64/apds03.it.html#idm4535)
+
+
+## Info utili
+[Spazio su disco necessario per i task - amd64](https://www.debian.org/releases/stable/amd64/apds02.it.html)
+[Release Debian] (https://www.debian.org/releases/)
+
+
+
+## Servizi (daemon) / Services (daemons)
+
+```ps``` --> programmi lanciati dall'utente
+```ps aux``` --> daemons
+```pstree```
+
+Systemd --> Master daemon (id 1)
+init system
+
+Boot --> Kernel --> systemd --> fs, services, ...
+
+
+```systemctl``` --> send control commands to the system manager
+unit --> daemon
+
+```systemctl opzioni comando  nome_servizio```
+
+comandi:
+
+```
+status
+start
+stop
+restart
+reload
+reload-or-restart
+enable
+disable
+is-enable
+```
+
+## Processi / Processes
+Processo: istanza di un programma in esecuzione
+
+Foreground processes
+Background processes
+
+
+
+### ps
+```ps``` 					--> ciò che è in esecuzione nel terminale
+```ps -u nomeutente```		--> processi utente
+```ps aux```
+
+### top
+```top```
+```htop```
+
+### kill
+pid --> process id
+send kill signal, default is 15
+```kill -l```
+CTRL C --> 2
+CTRL Z --> 19
+CTRL Z --> 18 (Control Z seconda volta)
+```kill pid```
+```pgrep nome_processo``` --> restituisce l'id del processo
+
+
+
+### jobs
+
+### bg /fg
+
+## LOG
+
+```journalctl -xe```
 
