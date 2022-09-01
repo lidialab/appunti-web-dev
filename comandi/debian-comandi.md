@@ -1,13 +1,19 @@
 # Comandi base
 
 ## Help
+
 ```help```
+
 ```info```
+
 ```man```
+
 ```apropos```
 
 ```comando -h```
+
 ```comando --h```
+
 ```comando --help```
 
 
@@ -129,24 +135,32 @@ sudo groupdel athenacrew
 ```cat /etc/groupfile```
 
 ## Determinare S.O. e versione
+
 ```cat /etc/issue```
 
 ```cat /etc/*-release```
 
 ## Determinare hostname
+
 ```hostname```
 
 ## Determinare cose
+
 ```uname```
+
 ```ip```
+
 ```ss```
+
 ```netstat```
+
 ```env```
 
 # Gestione dei pacchetti
 ## APT - Advanced Package Tool
 
 Le fonti da cui APT attinge i pacchetti sono elencate nel file
+
 ```/etc/apt/sources.list```
 
 Ci sono due tipi di fonti
@@ -368,11 +382,15 @@ Background processes
 ### kill
 pid --> process id
 send kill signal, default is 15
+
 ```kill -l```
+
 CTRL C --> 2
 CTRL Z --> 19
 CTRL Z --> 18 (Control Z seconda volta)
+
 ```kill pid```
+
 ```pgrep nome_processo``` --> restituisce l'id del processo
 
 
@@ -394,6 +412,7 @@ CTRL Z --> 18 (Control Z seconda volta)
 downloading files
 
 ```curl -I```
+
 ```curl -v```
 
 ## FONTI
