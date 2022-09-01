@@ -375,3 +375,7 @@ CTRL Z --> 18 (Control Z seconda volta)
 
 ```journalctl -xe```
 
+## FONTI
+- https://tldp.org/LDP/sag/html/index.html
+- 
+
