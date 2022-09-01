@@ -381,18 +381,3 @@ CTRL Z --> 18 (Control Z seconda volta)
 
 ### bg /fg
 
-## LOG
-
-```journalctl -xe```
-
-```/var/log/```
-
-
-## Web stuff / tools
-
-### curl
-downloading files
-
-```curl -I```
-```curl -v```
-
