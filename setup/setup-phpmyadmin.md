@@ -2,6 +2,10 @@
 
 ## Installare phpMyAdmin
 
+### Manualemnte
+
+Scaricare phpmyadmin e scompattarlo in una sottocartella di www
+
 ### Installare phpMyAdmin in una distro Debian
 
 Scaricare phpmyadmin e scompattarlo nella directory del localhost oppure eseguire:

@@ -34,6 +34,19 @@ Riferimenti per directory speciali
 ~       # home directory
 ```
 
+Tornare alla directory precedente
+```
+cd -
+```
+
+## Prompt tricks
+
+CTRL + U --> cancella tutto quello che c'è prima del cursore
+CTRL + K --> cancella tutto quello che c'è dop il cursore
+CTRL + A --> va all'inizio 
+CTRL + E --> va alla fine
+
+
 ## Utenti
 
 ### Creare un nuovo utente e aggiungerlo a un gruppo
@@ -234,22 +247,19 @@ sudo chown -R www-data:www-data /var/www/html/nome_cartella/
 
 ## Utility
 
-### cp
-Copiare file
-
-### rm
-Eliminare file
-
-### cat
-Visualizzatore del contenuto di un file
-
-### sudo
-Eseguire un comando da root
-
-### which
-Quale binario viene eseguito
-
-
+- cp 		--> copiare file
+- rm 		--> eliminare file
+- rmdir		--> eliminare directory; -r per eliminare directory con sottodirectory
+- mv 		--> spostare file
+- cat 		--> visualizzatore del contenuto di un file
+- sudo 		--> eseguire un comando da root
+- which 	--> quale binario viene eseguito
+- history 		; CTRL + R --> cercare nella history
+- clear 		; control + L
+- less
+- tail
+- touch  	--> creare un file
+- tree 
 
 ## shell
 shell in uso:
@@ -374,4 +384,15 @@ CTRL Z --> 18 (Control Z seconda volta)
 ## LOG
 
 ```journalctl -xe```
+
+```/var/log/```
+
+
+## Web stuff / tools
+
+### curl
+downloading files
+
+```curl -I```
+```curl -v```
 

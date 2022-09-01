@@ -2,12 +2,12 @@
 Ubuntu Server 22.04.1 LTS 64:
 4GB RAM - disco virtuale allocato dinamicamente (un po' più lento), VDI (VBox), 30GB - 2 CPU, rete con Bridge. 
 
+## Installare Ubuntu server e aggiornare il sistema
+[[setup-ubuntu-server.md]]
 
 ## Installare Apache
 
 ```
-sudo apt update && sudo apt upgrade -y
-sudo reboot
 sudo apt install apache2 -y
 sudo service apache2 status
 # se non è attivo farlo partire con:
