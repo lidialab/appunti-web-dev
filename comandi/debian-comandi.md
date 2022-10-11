@@ -40,7 +40,7 @@ Riferimenti per directory speciali
 ~       # home directory
 ```
 
-Tornare alla directory precedente
+Tornare alla directory precedente (history)
 ```
 cd -
 ```
@@ -52,8 +52,17 @@ CTRL + K --> cancella tutto quello che c'è dop il cursore
 CTRL + A --> va all'inizio 
 CTRL + E --> va alla fine
 
+### Concatenare comandi
+- utilizzare il punto e virgola ";"
+- utilizzare "&&" se si vuole eseguire il secondoo comando solo se il primo è andato bene
 
 ## Utenti
+
+### Creare un nuovo utente
+
+```
+sudo adduser athena
+```
 
 ### Creare un nuovo utente e aggiungerlo a un gruppo
 
@@ -61,6 +70,13 @@ CTRL + E --> va alla fine
 sudo adduser athena
 sudo adduser athena sudo
 sudo adduser athena www-data
+```
+
+## Aggiungere un nuovo utente al gruppo sudo
+
+```
+adduser demetra
+sudo usermod -aG sudo demetra
 ```
 
 ### Crisi esistenziale (qual è il mio utente?)
@@ -144,6 +160,11 @@ sudo groupdel athenacrew
 
 ```hostname```
 
+### Cambiare nome all'hostname
+``` sudo nano /etc/hostname ```
+
+Aggiungerlo anche al file ```/etc/hosts```
+
 ## Determinare cose
 
 ```uname```
@@ -219,6 +240,12 @@ Molti dei comandi seguenti vanno eseguiti con privilegi amministrativi, utilizza
 ### Upgrade della versione maggiore del sistema operativo
 ```apt full-upgrade```
 
+### Upgrade della distro
+```apt dist-upgrade```
+
+### Rimuovere pacchetti vecchi non più utilizzati
+```apt autoremove```
+
 ## Comando dpkg
 
 ### Cercare software
@@ -269,11 +296,15 @@ sudo chown -R www-data:www-data /var/www/html/nome_cartella/
 - sudo 		--> eseguire un comando da root
 - which 	--> quale binario viene eseguito
 - history 		; CTRL + R --> cercare nella history
-- clear 		; control + L
+	- !n°x nella history esegue il comando x
+- clear 		; CTRL + L
 - less
 - tail
 - touch  	--> creare un file
 - tree 
+- column
+- find
+
 
 ## shell
 shell in uso:
@@ -417,6 +448,7 @@ downloading files
 
 ## FONTI
 - https://tldp.org/LDP/sag/html/index.html
-- 
+- https://www.youtube.com/c/LearnLinuxtv
+- https://www.youtube.com/c/NetworkChuck
 
 

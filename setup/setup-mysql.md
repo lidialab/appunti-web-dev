@@ -1,9 +1,23 @@
 ## Installare MySQL
+
 ```
 sudo apt install mysql-server -y
 ```
 
+oppure
+
+```
+sudo apt install mariadb-server -y
+```
+
+Configurazione di sicurezza post installazione:
+
+```
+sudo mysql_secure_installation
+```
+
 ## Utilizzare utente root con password (ambiente di test)
+
 ```
 sudo mysql
 select user, host, authentication_string from mysql.user;
@@ -14,11 +28,20 @@ exit
 Per testare se funziona accedere con ```mysql -u root -p``` inserisci la password, se entri è ok (poi ```exit``` per uscire).
 
 
---------------------------------------------------------------------------------------------------------------------
+## Creare un DB e uno user ad-hoc
 
-????????????????????????????
+```
+sudo mysql
+CREATE DATABASE nome_db;
+GRANT ALL PRIVILEGES ON nome_db.* TO 'nome_user'@'localhost' IDENTIFIED BY 'user_password';
+GRANT ALL PRIVILEGES ON nome_db.* TO 'nome_user'@'%' IDENTIFIED BY 'user_password';
+FLUSH PRIVILEGES;
+exit
+```
 
-# Configurare MySQL
+
+## Configurare MySQL per ????????????????????????????
+
 ```
 sudoedit /etc/mysql.conf
 ```

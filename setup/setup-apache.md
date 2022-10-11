@@ -111,3 +111,13 @@ sudo chown -R www-data /var/www/html/test
 ```
 
 dove con 192.168.10.222 si intende l'IP del vostro server locale Ubuntu.
+
+## .htaccess
+
+Va abilitato per ogni singolo virtual host con la seguente direttiva:
+
+```
+<Directory /var/www/html/nome_directory>
+        AllowOverride All
+</Directory>
+```
