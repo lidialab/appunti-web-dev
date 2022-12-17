@@ -12,6 +12,12 @@ CTRL+R
 ```
 shell:common startup
 ```
+## Comandi
+### mklink
+```
+mklink /J "\link\da\creare" "\percorso\target\"
+```
+
 ## Script per avviare unità virtuali BitLocker
 ### File da far eseguire alla shell diskpart (es: "vdisk.txt")
 ```
