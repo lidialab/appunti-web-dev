@@ -6,6 +6,19 @@
  RewriteRule ^(.*)$ https://nomedominio.ext/$1 [R,L]
 </IfModule>
 ```
+# 000-default.conf
+
+sudo nano /etc/apache2/sites-available/000-default.conf
+
+```
+<VirtualHost *:80>
+   ServerAdmin example@example
+
+   RewriteEngine On
+   RewriteCond %{HTTPS} off
+   RewriteRule ^(.*)$ https://%{HTTP_HOST}$1 [R=301,L]
+</VirtualHost>
+```
 
 # Browser cache
 ```
