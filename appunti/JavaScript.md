@@ -1,8 +1,19 @@
 # Appunti JS
 
-JavaScript è un linguaggio di scripting basato sullo standard ECMAScript, mantenuto e aggiornato dall'Ecma International (European Computer Manufacturers Association). Attualmente la versione più utilizzata da chi sviluppa e supportata dai browser è ECMAScript 5 del 2009 (la versione [5.1](https://www.ecma-international.org/ecma-262/5.1/) è un allineamento agli standard ISO).
+JavaScript è un linguaggio di scripting.
+JavaScript puro è anche chiamato Vanilla JS.
+
+Le specifiche per i browser si basano sullo standard ECMAScript (indica come i browser devono interpretare JS), mantenuto e aggiornato dall'Ecma International (European Computer Manufacturers Association). Attualmente la versione più utilizzata da chi sviluppa e supportata dai browser è ECMAScript 5 del 2009 (la versione [5.1](https://www.ecma-international.org/ecma-262/5.1/) è un allineamento agli standard ISO).
 
 Se si utilizzano le nuove versioni (ES6, ...) è opportuno utilizzare una libreria di transpilling (Babel, Webpack, ...) che permette la retrocompatibilità coi browser vecchi.
+
+Ci sono varianti di JS come TypeScript (file con estensione .ts) che introducono funzionalità/caratteristiche specifiche come la strong typing.
+
+I framework basati su JS (React, Vue, Angular, ...) permettono di scrivere più velocemente applicazioni front-end.
+
+npm, WebPack, Gulp sono strumenti e sistemi -infrastrutture- che permettono di automatizzare la trasposizione di codice human-readble in codice performante per i browser.
+
+Node.js è il runtime JS lato server che serve per eseguire npm, WebPack, Babel, ...
 
 [Tabella di compatibilità mantenuta da Kangax](http://kangax.github.io/compat-table/es5/)
 
@@ -46,12 +57,25 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
         File JavaScript Esterno nell'head
         ATTENZIONE all'effetto JavaScript Rendering Blocking
         HTTP/2 attenua questo problema
+        type="text/javascript" non è più necessario
     -->
     <script type="text/javascript" src="fileEsterno1.js">//JavaScript Loading Immediato</script>
    // Async
+   // riduce i tempi di attesa
     <script type="text/javascript" src="fileEsterno2.js" async>//JavaScript Loading Asincrono</script>
    // Defer
+   // per quegli script che DEVONO essere richiamati solo dopo il rendering della pagina
     <script type="text/javascript" src="fileEsterno3.js" defer>//JavaScript Loading Differito</script>
+
+
+    // Module
+    // Vengono caricati in modalità defer
+    // in modulo.js verrà esportato qualcosa
+    // export default qualcosa;
+    <script type="module" src="modulo.js"></script>
+    // in script.js verrà importato modulo.js
+    // import qualcosa from "./modulo.js";
+    <script type="module" src="script.js"></script>
 
     <script type="text/javascript">
     // inline javascript nell'head, viene eseguito prima del caricamento della pagina
@@ -454,9 +478,14 @@ JavaScript è case SENSItive; è comune utilizzare la scrittura camelCase per i 
         ELIMINARE una proprietà
         delete nomeOggetto.nomeProprietà;
 
-        BRACKET notation --> quando la proprietà deve essere convertita è l'unica notation che funziona
+        BRACKET notation --> quando la proprietà deve essere convertita o richiamata in base a un valore è l'unica notation che funziona
+        
+        ad esempio 
+        var query = "nomeProprietà";
+        console.log("Il valore di nomeProprietà è:", nomeOggetto[query];);
+
         nomeOggetto["nomeProprietà"]
-        oppure se devo usare nel nome degli spazi (???perché dovrei???)
+        oppure se devo usare nel nome degli spazi o dei trattini (perché ad esempio è stato creato in base a valori caricati e non in fase di codice)
         nomeOggetto["nome proprietà"]
 
         REFERENCE di oggetti (nuovo puntamento alla stessa area di memoria)
