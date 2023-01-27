@@ -12,6 +12,10 @@ CTRL+R
 ```
 shell:common startup
 ```
+### Cartella APP
+```
+shell:AppsFolder
+```
 ## Comandi
 ### mklink
 ```
