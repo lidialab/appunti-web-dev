@@ -9,7 +9,7 @@ Per OpenSSH vai nella tua home e crea la cartella .ssh
 
 Crea il file authorized_keys
 
-Modifica il file authorized_keys accodando la chiave pubblica che hai copiato da PuTTYGen
+Modifica il file authorized_keys accodando la chiave pubblica che hai copiato da PuTTYGen su un'unica riga
 
 ```
 echo "___ssh-rsa AAAABBBBBBBBBBBBBBBBCCCCCCCCCCCCCC...DDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEEEE___" >> .ssh/authorized_keys
