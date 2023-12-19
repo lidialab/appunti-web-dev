@@ -1,6 +1,6 @@
 # Connessione SSH a VM tramite coppia di chiavi
 ## PuTTY (Windows)
-Crea la coppia di chiavi tramite PuTTYGen
+Crea la coppia di chiavi (in Windows ad esempio tramite tramite PuTTYGen)
 
 ### Chiave pubblica 
 Copia la chiave pubblica nel server
@@ -14,8 +14,8 @@ Modifica il file authorized_keys accodando la chiave pubblica che hai copiato da
 ```
 echo "ssh-rsa AAAABBBBBBBBBBBBBBBBCCCCCCCCCCCCCC...DDDDDDDDDDDDDDEEEEEEEEEEEEEEEEEEEEE" >> .ssh/authorized_keys
 ```
-Imposta la chiave privata nella sessione di PuTTY di quella connessione alla voce Connection > SSH > Auth > Private key file for authentication
+Per Putty inserisci il nome utente per l'auto login alla voce Connection > Data > Auto-login username e imposta la chiave privata nella sessione di quella connessione alla voce Connection > SSH > Auth > Private key file for authentication
 
 Modifica a piacere le opzioni di visualizzazione della finestra (dimensione carattere, ...)
 
-Salva la sessione
+Prova la sessione e è tutto ok salvala
