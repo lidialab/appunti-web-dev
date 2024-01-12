@@ -41,3 +41,9 @@ Per non ricevere il popup di errore di apertura dell'unità disabilitare l'avvio
 ## PowerShell
 ### Visualizzare hash di un file
 ``get-filehash -Algorithm SHA512 .\nome-file.ext  | Format-List``
+
+## Winget
+```winget list```
+```winget list --upgrade-available```
+```winget upgrade nome-pacchetto```
+```winget upgrade --all ```
