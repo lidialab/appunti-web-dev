@@ -20,15 +20,39 @@ sudo service apache2 status
 ```
 sudo ufw status
 ```
+
 Se è attivo verifica le app che possono essere raggiunte
+
 ```
 sudo ufw app list
 ```
+
 ed eventualmente abilita le porte 80 e 443 (ambiente di test)
+
+```
+sudo ufw allow http 80/tcp
+sudo ufw allow https 443/tcp
+```
+
+che può anche essere scritto:
+
 ```
 sudo ufw allow http
 sudo ufw allow https
 ```
+
+abilitare ufw:
+
+```
+sudo ufw enable
+```
+
+far ripartire ufw per rendere operative le nuove regole:
+
+```
+sudo ufw reload
+```
+
 
 ### Verificare i file di configurazione di Apache
 ```
@@ -129,8 +153,10 @@ exit
 ```
 Per testare se funziona accedere con ```mysql -u root -p``` inserisci la password, se entri è ok (poi ```exit``` per uscire).
 
+Eseguire mysql_secure_installation
+```sudo mysql_secure_installation```
 
-## Installare PHP
+## Installare PHP (e moduli)
 ```
 sudo apt install php libapache2-mod-php php-mysql -y
 ```
@@ -170,7 +196,7 @@ Lo avviamo e impostiamo che parta in automatico ad ogni reboot
 sudo service mailcatcher start
 sudo systemctl enable mailcatcher.service
 
-sudoedit /etc/php/7.2/mods-available/mailcatcher.ini
+sudoedit /etc/php/X.x/mods-available/mailcatcher.ini
 ```
 File mailcatcher.ini:
 ```
@@ -212,3 +238,8 @@ Riavviamo MySQL
 sudo service mysql restart
 sudo chgrp adm /var/log/mysql/slow.log
 ```
+
+
+--------------------------------------------------------------------------------------------------------------------
+## CERTBOT
+sudo apt install certbot python3-certbot-apache -y
