@@ -172,6 +172,9 @@ sudo nano /var/www/html/test/info.php
 ## Installare phpMyAdmin
 
 Scaricare phpmyadmin e scompattarlo in una sottocartella di www
+```
+sudo wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.zip
+```
 
 # Mailcatcher
 ```
