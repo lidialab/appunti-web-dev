@@ -21,7 +21,7 @@ Lo avviamo e impostiamo che parta in automatico ad ogni reboot
 sudo service mailcatcher start
 sudo systemctl enable mailcatcher.service
 
-sudoedit /etc/php/7.2/mods-available/mailcatcher.ini
+sudoedit /etc/php/x.x/mods-available/mailcatcher.ini
 ```
 File mailcatcher.ini:
 ```
