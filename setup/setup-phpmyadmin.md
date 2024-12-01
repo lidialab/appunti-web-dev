@@ -2,9 +2,15 @@
 
 ## Installare phpMyAdmin
 
-### Manualemnte
+### Manualmente
 
-Scaricare phpmyadmin e scompattarlo in una sottocartella di www
+```
+cd /var/www/html/
+sudo wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.zip
+sudo unzip phpMyAdmin-latest-all-languages.zip
+sudo rm phpMyAdmin-latest-all-languages.zip -R
+sudo mv phpMyAdmin-x.x.x-all-languages/ phpmyadmin
+```
 
 ### Installare phpMyAdmin in una distro Debian
 
