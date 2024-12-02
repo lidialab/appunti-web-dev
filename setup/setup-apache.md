@@ -102,8 +102,8 @@ Può essere aggiunto anche un Alias per gestire domini con e senza www:
         Require all granted
   </Directory>
 
-  ErrorLog \${APACHE_LOG_DIR}/error-$DOMAIN.log
-  CustomLog \${APACHE_LOG_DIR}/access-$DOMAIN.log combined
+  ErrorLog /${APACHE_LOG_DIR}/error-$DOMAIN.log
+  CustomLog /${APACHE_LOG_DIR}/access-$DOMAIN.log combined
 
 </VirtualHost>
 ```
