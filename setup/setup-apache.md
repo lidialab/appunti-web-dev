@@ -131,7 +131,7 @@ sudo chgrp -R www-data /var/www/html/test
 sudo chown -R www-data /var/www/html/test
 ```
 
-## Nel client che interrogherà il server creare le voci nel file hosts, esempio in Windows modificare il file \Windows\System32\drivers\etc\hosts aggiungendo:
+Nel client che interrogherà il server creare le voci nel file hosts, esempio in Windows modificare il file \Windows\System32\drivers\etc\hosts aggiungendo:
 ```
 192.168.10.222	localdev
 192.168.10.222	phptest.myext
