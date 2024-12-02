@@ -79,7 +79,7 @@ sudo systemctl reload apache2
 
 ### Creare un nuovo VHost
 
-Nella directory /etc/apache2/sites-available creare un file .conf per il muovo sito.
+Nella directory /etc/apache2/sites-available creare un file $DOMAIN.conf per il nuovo sito.
 Inserire i parametri minimi per ServerName e DocumentRoot come ad esempio:
 
 ```
@@ -93,16 +93,25 @@ Può essere aggiunto anche un Alias per gestire domini con e senza www:
 
 ```
 <VirtualHost *:80>
-  ServerName phptest.myext
-  ServerAlias www.phptest.myext
-  DocumentRoot "/var/www/html/test"
+  ServerName $DOMAIN
+  ServerAlias www.$DOMAIN
+  DocumentRoot "/var/www/html/$DOMAIN"
+
+  <Directory /var/www/html/$DOMAIN>
+        AllowOverride All
+        Require all granted
+  </Directory>
+
+  ErrorLog \${APACHE_LOG_DIR}/error-$DOMAIN.log
+  CustomLog \${APACHE_LOG_DIR}/access-$DOMAIN.log combined
+
 </VirtualHost>
 ```
 
 Abilitare il sito e riavviare apache:
 
 ```
-sudo a2ensite nomefile.conf
+sudo a2ensite $DOMAIN.conf
 sudo systemctl reload apache2
 ```
 
@@ -139,4 +148,11 @@ Va abilitato per ogni singolo virtual host con la seguente direttiva:
 <Directory /var/www/html/nome_directory>
         AllowOverride All
 </Directory>
+```
+## prettylink
+
+```
+sudo a2enmod rewrite
+sudo systemctl reload apache2
+
 ```
