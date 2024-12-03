@@ -159,6 +159,26 @@ echo $arrayMisto[3][0];
 echo print_r($arrayMisto);
 </pre>
 ```
+#### Array multidimensionali
+
+```php
+$altroArray = [
+  [
+  'regione' => 'Aosta',
+  'capoluogo' => 'Aosta'
+  ],
+  [
+  'regione' => 'Puglia',
+  'capoluogo' => 'Bari'
+  ],
+  [
+  'regione' => 'Veneto',
+  'capoluogo' => 'Venezia'
+  ]
+];
+
+echo $altroArray[2]['capoluogo'];
+```
 
 #### Funzioni per gli array
 https://www.php.net/manual/en/ref.array.php
