@@ -258,6 +258,10 @@ identical: ===
 >=
 <>
 ```
+C'è anche questo, ma non l'ho esaminato...
+```
+$a <=> $b 	Spaceship 	Un int minore di, uguale a, o maggiore di zero quando $a è minore di, uguale a, o maggiore di $b. 
+```
 
 ### Operatori aritmetici
 ```php
@@ -274,7 +278,9 @@ NB: -$var --> negativo
 ...
 
 ## Strutture di controllo
+
 ### IF
+
 ```php
 if ( expression ) {
 ...
@@ -479,6 +485,11 @@ Per riferirsi ad altri file in un file che viene incluso utilizzare una variabil
 
 Può essere utile fare debugging con get_include_path()
 Può essere utile definire il percorso degli inlcude con set_include_path, in tal caso è raccomandato utilizzare come separatore di cartelle la variale PATH_SEPARATOR.
+
+### Date
+```
+date()
+```
 
 ## Troubleshooting
 - errori di sintassi
