@@ -149,8 +149,10 @@ $altroArray = [
 ```
 
 #### Utilizzo
+La posizione degli elementi parte da 0.
+
 ```php
-echo $nomearray[0]; // -->1
+echo $nomearray[0]; // --> 1° elemento
 echo $arrayMisto[3][0];
 
 <pre>
@@ -211,9 +213,10 @@ settype();
 ```
 
 ## COSTANTI
-// senza segno del dollaro
+// senza segno del dollaro, per convenzione si scrivono in maiuscolo
 ```php
 define ("NOME_COSTANTE", 3.14);
+define ('PI_GRECO', 3.14);
 ```
 
 ## Operatori
