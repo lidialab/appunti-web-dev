@@ -22,6 +22,7 @@ Quando un file php è costituito da solo codice php si può omettere il tag di c
 È utile per prevenire linee vuote o a capo non voluti, dopo il tag di chiusura.
 ## Sintassi istruzioni
 Vanno chiuse obbligatoriamente da ";".
+Se è l'ultima istruzione prima della fine del tag di chiusura php ";" si può omettere, però meglio usarlo sempre.
 
 ## Spazi extra
 php non li considera
@@ -165,8 +166,8 @@ ESPLICITI: TRUE e FALSE
 Le keywords TRUE (true) FALSE (false) sono case insensitive 
 Le keywords non vanno inserite tra apici o virgolette
 ```php
-true    //-->1
-false   //-->no valore
+true    //--> 1
+false   //--> no valore
 ```
 
 IMPLICITI
@@ -405,6 +406,7 @@ Globale
 
 
 ## Input
+
 ```php
 $_SERVER
 $_GET
@@ -415,12 +417,25 @@ Utilizzare GET solo per i form di ricerca, così possono essere memorizzati nei 
 html_entities converte "tutto" tranne apici singoli.
 
 ## Output
+
 ### echo
 echo può visualizzare una serie di dati separati da ","
-c'è una versione abbreviata ```<?=  ?>```
+c'è una versione abbreviata ```<?=  ?>``` ma la relativa opzione deve essere attiva nel server
+Se sono presenti nomi di variabili e sono usati gli apici singoli vengono stampati i nomi delle variabili.
+Se sono presenti nomi di variabili e sono usati gli apici doppi vengono stampati i valori delle variabili.
+Se vengono usati gli apici doppi il nome della variabile dopo il simbolo del dollaro può essere racchiuso tra parentesi graffe per evidenziare la presenza di una variabile. ES: echo "Ciao ${NOME}";
 
 ### print
 print può visualizzare un solo argomento 
+
+### print_r
+print può visualizzare un solo argomento oppure un array
+
+### var_dump
+stampa il tipo di variabile, la lunghezza e il suo contenuto
+
+### var_export()
+stampa la variabile come una stringa con gli apici
 
 ## Oggetti
 ...
