@@ -3,7 +3,7 @@
 [Official website](https://www.php.net/)
 
 ## Cos'è
-È un linguaggio di scripting lato server (server side)
+È un linguaggio di scripting lato server (server side) 
 
 ## Estensioni
 L'estensione principale è .php
