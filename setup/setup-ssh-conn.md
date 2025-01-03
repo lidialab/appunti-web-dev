@@ -19,3 +19,12 @@ Per Putty inserisci il nome utente per l'auto login alla voce Connection > Data 
 Modifica a piacere le opzioni di visualizzazione della finestra (dimensione carattere, ...)
 
 Prova la sessione e è tutto ok salvala
+
+
+Puoi copiare il file con la chiave pubblica dal terminale di Windows nella tua home del pc remoto:
+
+```scp file.ext username@remote_ip:```
+
+Quindi accodarla al file uthorized_keys tramite:
+
+```cat id_rsa.pub >> .ssh/authorized_keys```
